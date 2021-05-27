@@ -1,0 +1,41 @@
+---
+title: teste a coisas
+layout: dawn/default.njk
+permalink: /membros/
+---
+
+<div class="site-content">
+    <main id="site-main" class="site-main outer" role="main">
+        <div class="inner">
+            <div class="member-feed site-content">
+                {% for member in members %}
+                    <article class="member-card ">
+                        <a href="/author/{{member.slug}}/" title="{{member.name}}"></a>
+                        <div class="author">
+                            <a href="/membros/{{member.slug}}"
+                            title="{{member.name}}">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit"
+                                    src="{{member.profile_image}}"
+                                    alt="{{member.name}}">
+                                </div>
+                            </a>
+                            <h1 class="author-name">
+                                <a href="/membros/{{member.slug}}/" title="{member.name}"></a>
+                                <a
+                                href="/membros/{{member.slug}}/" target="_blank"
+                                rel="noopener noreferrer">{{member.name}}</a>
+                            </h1>
+                            <div class="author-bio">{{member.bio}}
+                            </div>
+                            <div class="share author-social" style="margin-top:0;"></div>
+                        </div>
+                    </article>
+                {% endfor %}}
+
+
+            </div>
+        </div>
+    </main>
+
+</div>

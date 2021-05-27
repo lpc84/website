@@ -1,0 +1,22 @@
+<div class="cover container">
+    <div class="cover-content">
+        {{#if @site.icon}}
+            <div class="cover-icon">
+                <img class="cover-icon-image" src="https://decrescimento.pt/assets/images/dark_icon.png" alt="{{@site.title}}">
+            </div>
+        {{/if}}
+
+        {{#if @site.description}}
+            <div class="cover-description">Num planeta de recursos limitados torna-se imperativo reduzir os níveis de produção e consumo. A Rede para o Decrescimento apela a mudanças individuais, a experiências coletivas, a resistir, a desenvolver projetos políticos e a pensar em futuros diferentes.</div>
+        {{/if}}
+
+        {{#if @labs.members}}
+            {{#unless @member}}
+                <div class="cover-cta">
+                    <button class="button members-subscribe" data-portal="signup">Subscrever</button>
+                    <a class="button members-subscribe" href="/sobre-nos">Saiba Mais</a>
+                </div>
+            {{/unless}}
+        {{/if}}
+    </div>
+</div>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="stylesheet" href="/css/screen.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap">
+
+        <script>
+            var siteUrl = '';
+        </script>
+
+        <script>
+            var localTheme = localStorage.getItem('dawn_theme');
+            switch (localTheme) {
+                case 'dark':
+                    document
+                        .documentElement
+                        .classList
+                        .add('theme-dark');
+                    break;
+                case 'light':
+                    document
+                        .documentElement
+                        .classList
+                        .add('theme-light');
+                    break;
+                default:
+                    break;
+            }
+        </script>
+
+        
+    </head>
+
+    <body>
+
+        <div class="site">
+            <header class="site-header container">
+                <div class="header-left">
+    <a class="logo" href="http://localhost:8080"><img class="logo-image white" src="https://beta.decrescimento.pt/assets/images/white_logo.png">
+        <img class="logo-image" src="https://beta.decrescimento.pt/content/images/2021/03/g4962-2-1.png" alt="Rede para o Descrescimento">
+    </a>
+</div>
+<nav class="main-nav hidden-xs hidden-sm hidden-md">
+    <a class="menu-item menu-item-" href="/">Inicio</a>
+    <a class="menu-item menu-item-" href="/o-que-e-o-decrescimento/">Decrescimento?</a>
+    <a class="menu-item menu-item-" href="/sobre-nos/">Sobre Nós</a>
+    <a class="menu-item menu-item-" href="/eventos/">Eventos</a>
+</nav>
+<button class="button-icon hidden-lg hidden-xl js-modal" data-modal="search" aria-label="Search">
+    <svg class="icon">
+        <use xlink:href="#magnify"></use>
+    </svg>
+</button>
+<div class="burger hidden-lg hidden-xl">
+    <div class="burger-bar"></div>
+    <div class="burger-bar"></div>
+</div>
+            </header>
+
+            
+<div class="site-content">
+    <main id="site-main" class="site-main outer" role="main">
+        <div class="inner">
+            <div class="member-feed site-content">
+                
+                    <article class="member-card ">
+                        <a href="/author/alvaro/" title="Álvaro Fonseca"></a>
+                        <div class="author">
+                            <a href="/membros/alvaro"
+                            title="Álvaro Fonseca">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit"
+                                    src="//www.gravatar.com/avatar/35e92c42d0228c44a97d3d9e56a418b1?s=250&amp;d=mm&amp;r=x"
+                                    alt="Álvaro Fonseca">
+                                </div>
+                            </a>
+                            <h1 class="author-name">
+                                <a href="/membros/alvaro/" title="{member.name}"></a>
+                                <a
+                                href="/membros/alvaro/" target="_blank"
+                                rel="noopener noreferrer">Álvaro Fonseca</a>
+                            </h1>
+                            <div class="author-bio">Ex-académico das ciências da vida. Investigador da contemporaneidade. O decrescimento acompanha-me desde 2012 como reflexão sistémica sobre o estado do mundo e como caminho de transformação social.
+                            </div>
+                            <div class="share author-social" style="margin-top:0;"></div>
+                        </div>
+                    </article>
+                
+                    <article class="member-card ">
+                        <a href="/author/guiser/" title="Guilherme Serodio"></a>
+                        <div class="author">
+                            <a href="/membros/guiser"
+                            title="Guilherme Serodio">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit"
+                                    src="https://decrescimento.pt/content/images/2021/03/IMG_E3442.JPG"
+                                    alt="Guilherme Serodio">
+                                </div>
+                            </a>
+                            <h1 class="author-name">
+                                <a href="/membros/guiser/" title="{member.name}"></a>
+                                <a
+                                href="/membros/guiser/" target="_blank"
+                                rel="noopener noreferrer">Guilherme Serodio</a>
+                            </h1>
+                            <div class="author-bio">Ativista, radical livre, decrescentista, pensador crítico. Só quando conseguirmos descolonizar a nossa mente do capitalismo poderemos começar a pensar -realmente- novos mundos e maneiras de lutar. 
+                            </div>
+                            <div class="share author-social" style="margin-top:0;"></div>
+                        </div>
+                    </article>
+                
+                    <article class="member-card ">
+                        <a href="/author/hans/" title="Hans Eickhoff"></a>
+                        <div class="author">
+                            <a href="/membros/hans"
+                            title="Hans Eickhoff">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit"
+                                    src="https://decrescimento.pt/content/images/2021/03/FotoMultiusos.jpg"
+                                    alt="Hans Eickhoff">
+                                </div>
+                            </a>
+                            <h1 class="author-name">
+                                <a href="/membros/hans/" title="{member.name}"></a>
+                                <a
+                                href="/membros/hans/" target="_blank"
+                                rel="noopener noreferrer">Hans Eickhoff</a>
+                            </h1>
+                            <div class="author-bio">Médico. Cofundador do Coletivo Xis. Ativo nos movimentos antinucleares e pacifistas dos anos 1980. Dá por adquirido que o atual sistema de crescimento infinito é ecológica e moralmente insustentável.
+                            </div>
+                            <div class="share author-social" style="margin-top:0;"></div>
+                        </div>
+                    </article>
+                
+                    <article class="member-card ">
+                        <a href="/author/luis/" title="Luís Camacho"></a>
+                        <div class="author">
+                            <a href="/membros/luis"
+                            title="Luís Camacho">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit"
+                                    src="https://decrescimento.pt/content/images/2021/03/fotografia.jpeg"
+                                    alt="Luís Camacho">
+                                </div>
+                            </a>
+                            <h1 class="author-name">
+                                <a href="/membros/luis/" title="{member.name}"></a>
+                                <a
+                                href="/membros/luis/" target="_blank"
+                                rel="noopener noreferrer">Luís Camacho</a>
+                            </h1>
+                            <div class="author-bio">Engenheiro Informático de profissão, contribuí para a Rede para o Decrescimento e Plataforma Troca por um Comércio Justo.
+                            </div>
+                            <div class="share author-social" style="margin-top:0;"></div>
+                        </div>
+                    </article>
+                
+                    <article class="member-card ">
+                        <a href="/author/nicholas/" title="Nicholas McNair"></a>
+                        <div class="author">
+                            <a href="/membros/nicholas"
+                            title="Nicholas McNair">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit"
+                                    src="https://decrescimento.pt/content/images/2021/03/305093_10151115517354767_1204564209_n.jpg"
+                                    alt="Nicholas McNair">
+                                </div>
+                            </a>
+                            <h1 class="author-name">
+                                <a href="/membros/nicholas/" title="{member.name}"></a>
+                                <a
+                                href="/membros/nicholas/" target="_blank"
+                                rel="noopener noreferrer">Nicholas McNair</a>
+                            </h1>
+                            <div class="author-bio">
+                            </div>
+                            <div class="share author-social" style="margin-top:0;"></div>
+                        </div>
+                    </article>
+                
+                    <article class="member-card ">
+                        <a href="/author/paulo/" title="Paulo Mendonça"></a>
+                        <div class="author">
+                            <a href="/membros/paulo"
+                            title="Paulo Mendonça">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit"
+                                    src=""
+                                    alt="Paulo Mendonça">
+                                </div>
+                            </a>
+                            <h1 class="author-name">
+                                <a href="/membros/paulo/" title="{member.name}"></a>
+                                <a
+                                href="/membros/paulo/" target="_blank"
+                                rel="noopener noreferrer">Paulo Mendonça</a>
+                            </h1>
+                            <div class="author-bio">
+                            </div>
+                            <div class="share author-social" style="margin-top:0;"></div>
+                        </div>
+                    </article>
+                
+                    <article class="member-card ">
+                        <a href="/author/rede/" title="Rede para o Decrescimento"></a>
+                        <div class="author">
+                            <a href="/membros/rede"
+                            title="Rede para o Decrescimento">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit"
+                                    src="https://decrescimento.pt/content/images/2021/03/RDC-logo-estudos2-2.png"
+                                    alt="Rede para o Decrescimento">
+                                </div>
+                            </a>
+                            <h1 class="author-name">
+                                <a href="/membros/rede/" title="{member.name}"></a>
+                                <a
+                                href="/membros/rede/" target="_blank"
+                                rel="noopener noreferrer">Rede para o Decrescimento</a>
+                            </h1>
+                            <div class="author-bio">
+                            </div>
+                            <div class="share author-social" style="margin-top:0;"></div>
+                        </div>
+                    </article>
+                }
+
+
+            </div>
+        </div>
+    </main>
+
+</div>
+            <footer class="site-footer container">
+    <div class="social">
+        
+        
+        <a class="social-item social-item-rss"
+            href="https://feedly.com/i/subscription/feed//rss/"
+            target="_blank" rel="noopener noreferrer" aria-label="RSS">
+            <svg class="icon">
+                <use xlink:href="#rss-box"></use>
+            </svg>
+        </a>
+    </div>
+
+    <nav class="footer-nav" style="flex-direction: inherit;">
+
+        <small>Contacto: <a style="text-decoration: underline;" href="mailto:geral@decrescimento.pt">geral@decrescimento.pt</a>
+        </small>
+        <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <svg class="icon theme-icon theme-icon-system">
+                <use xlink:href="#circle-half-full"></use>
+            </svg>
+            <svg class="icon theme-icon theme-icon-dark">
+                <use xlink:href="#brightness-2"></use>
+            </svg>
+            <svg class="icon theme-icon theme-icon-light">
+                <use xlink:href="#white-balance-sunny"></use>
+            </svg>
+            <span class="theme-text">System theme</span>
+        </a>
+    </nav>
+</footer>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://www.decrescimento.pt/assets/built/main.min.js?v=3ef3ff0328" ></script>
+    </body>
+
+</html>

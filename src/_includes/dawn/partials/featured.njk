@@ -1,0 +1,23 @@
+{%if featured_posts.length %}
+    <section class="featured-wrapper container">
+        <h2 class="featured-title">Artigos em Destaque</h2>
+        <div class="featured-feed owl">
+            {%for featured in featured_posts %}
+                <article class="{{post_class}}">
+                    {% if featured.feature_image %}
+                        <div class="u-placeholder horizontal">
+                            <img class="lazyload u-object-fit"
+                                    data-srcset="{{featured.srcset}}" data-sizes="auto"
+                                    src="{{featured.feature_image}}"
+                                    alt="{{title}}">
+                        </div>
+                    {% endif %}
+                    <h3 class="post-title">{{featured.title}}</h3>
+                    <a class="u-permalink" href={{featured.url}}
+                            aria-label="{{featured.title}}"></a>
+                </article>
+            {% endfor %}
+
+        </div>
+    </section>
+{% endif %}

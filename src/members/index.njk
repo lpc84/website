@@ -1,0 +1,54 @@
+---
+title: teste a coisas
+layout: dawn/default.njk
+pagination:
+    data: members
+    size: 1
+    alias: member
+permalink: /membros/{{member.slug}}/
+---
+
+<div class="site-content">
+    <main id="site-main" class="site-main outer" role="main">
+
+        <section class="author container small">
+            <div class="author-image-placeholder u-placeholder square">
+                <img class="author-image u-object-fit" src="{{member.profile_image}}" alt="{{member.name}}">
+            </div>
+            <h1 class="author-name">
+                <a href="{{member.website}}" target="_blank" rel="noopener noreferrer">{{member.name}}</a>
+            </h1>
+            <span class="author-meta">{{member.location}}</span>
+            <div class="author-bio">{{member.bio}}</div>
+            <div class="share author-social"></div>
+        </section>
+        <div class="post-feed container medium" >
+            {% set memberPosts = ghost_posts | getMemberPosts(member) %}
+            {% for post in memberPosts %}
+                <article class="feed post">
+                    <div class="feed-calendar">
+                        <div class="feed-calendar-day">
+                            {{post.published_at | shortDate}}
+                        </div>
+                    </div>
+                    <h2 class="feed-title">{{post.title}}</h2>
+                    <div class="feed-right">
+                        <svg class="icon feed-visibility feed-visibility-public">
+                            <use xlink:href="#star"></use>
+                        </svg>
+                        <div class="feed-length">
+                            {{post.reading_time}} min leitura
+        </div>
+                    </div>
+                    <svg class="icon feed-icon">
+                        <use xlink:href="#chevron-right"></use>
+                    </svg>
+                    <a class="u-permalink" href="/posts/{{post.slug}}/" aria-label="{{post.title}}"></a>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</main>
+
+</div>
