@@ -33,7 +33,7 @@ layout: dawn/default.njk
 {{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 1140w" data-sizes="auto" src="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000" srcset="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 400w,
 {{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 750w,
 {{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 960w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 1140w" alt="O Plano de Recuperação e Resiliência" sizes="920px">
+{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 1140w" alt="{{post.title}}" sizes="920px">
     </div>
 </header>
 <div class="single-content kg-canvas u-text-format"/>
@@ -42,8 +42,8 @@ layout: dawn/default.njk
 <footer class="single-footer container medium">
 <div class="single-footer-left">
     <div class="navigation navigation-previous">
-        <a class="navigation-link" href="http://localhost:8080/{{pagination.href.previous}}" aria-label="Previous post">
-            aasd
+        <a class="navigation-link" href="{{env.URL}}/{{pagination.href.previous}}" aria-label="Previous post">
+            &lt;
         </a>
     </div>
 </div>
@@ -79,8 +79,8 @@ layout: dawn/default.njk
 </div>
 <div class="single-footer-right">
     <div class="navigation navigation-next">
-        <a class="navigation-link" href="http://localhost:8080/{{pagination.href.next}}" aria-label="Next post">
-            depois
+        <a class="navigation-link" href="{{env.URL}}/{{pagination.href.next}}" aria-label="Next post">
+            &gt;
         </a>
     </div>
 </div>
