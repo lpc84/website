@@ -131,8 +131,8 @@ function featured() {
         margin: 30,
         nav: true,
         navText: [
-            '<svg class="icon"><use xlink:href="#chevron-left"></use></svg>',
-            '<svg class="icon"><use xlink:href="#chevron-right"></use></svg>',
+            '&lt;',
+            '&gt;',
         ],
         responsive: {
             0: {

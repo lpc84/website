@@ -1,0 +1,91 @@
+---
+pagination:
+    data: ghost_pages
+    size: 1
+    alias: post
+permalink: "/pages/{{ post.slug | slug }}/"
+layout: dawn/default.njk
+---
+<header class="single-header kg-canvas">
+    <div class="single-meta">
+        <span class="single-meta-item single-meta-date">
+            <time datetime="2021-03-03">
+                {{post.published_at | shortDate}}
+            </time>
+        </span>
+        <span class="single-meta-item single-meta-length">
+            {{post.reading_time}} min leitura
+        </span>
+        <span class="single-meta-item single-meta-tag">
+            <a class="post-tag post-tag-decrescimento" href="/tag/{{post.tags[0].slug}}/">
+                {{post.tags[0].name}}
+            </a>
+        </span>
+    </div>
+    <h1 class="single-title">{{post.title}}</h1>
+    {% if post.feature_image %}
+    <div class="single-excerpt">
+        {{post.meta_description}}
+    </div>
+    {% endif %}
+    {% if post.feature_image %}
+    <div class="single-media kg-width-wide u-placeholder horizontal">
+        <img class="u-object-fit lazyautosizes lazyloaded" data-srcset="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 400w,
+{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 750w,
+{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 960w,
+{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 1140w" data-sizes="auto" src="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000" srcset="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 400w,
+{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 750w,
+{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 960w,
+{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 1140w" alt="{{post.title}}" sizes="920px">
+    </div>
+    {% endif%}
+</header>
+<div class="single-content kg-canvas u-text-format"/>
+{{post.html | safe}}
+</div>
+<footer class="single-footer container medium">
+<div class="single-footer-left">
+    <div class="navigation navigation-previous">
+        <a class="navigation-link" href="{{env.URL}}/{{pagination.href.previous}}" aria-label="Previous post">
+            &lt;
+        </a>
+    </div>
+</div>
+<div class="single-footer-middle">
+    <div class="single-footer-top">
+        <h3 class="single-footer-title">Autor</h3>
+        <div class="author-list">
+            {% for author in post.authors %}
+                <div class="author-image-placeholder u-placeholder square">
+                    <a href="/membros/{{author.slug}}/" title="{{author.name}}">
+                        <img class="author-image u-object-fit lazyloaded" src="{{author.profile_image}}" data-srcset="{{author.profile_image}}" alt="Rede para o Decrescimento">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="single-footer-bottom">
+        <div class="share">
+            <a class="share-link share-link-facebook" href="https://www.facebook.com/sharer.php?u=https://decrescimento.pt/o-plano-de-recuperacao-e-resiliencia-da-pseudo-consulta-publica-a-falta-de-coragem-para-imaginar-um-futuro-diferente/" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-facebook">
+                    <use xlink:href="#facebook"></use>
+                </svg>
+                            Partilhar
+                        </a>
+            <a class="share-link share-link-twitter" href="https://twitter.com/intent/tweet?url=https://decrescimento.pt/o-plano-de-recuperacao-e-resiliencia-da-pseudo-consulta-publica-a-falta-de-coragem-para-imaginar-um-futuro-diferente/&amp;text=O%20Plano%20de%20Recupera%C3%A7%C3%A3o%20e%20Resili%C3%AAncia" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-twitter">
+                    <use xlink:href="#twitter"></use>
+                </svg>
+                            Tweet
+                        </a>
+        </div>
+    </div>
+</div>
+<div class="single-footer-right">
+    <div class="navigation navigation-next">
+        <a class="navigation-link" href="{{env.URL}}/{{pagination.href.next}}" aria-label="Next post">
+            &gt;
+        </a>
+    </div>
+</div>
+</footer>
