@@ -6,8 +6,8 @@
                 <article class="post featured">
                     {% if featured.feature_image %}
                         <div class="u-placeholder horizontal">
-                            <img class="lazyload u-object-fit"
-                                    data-srcset="{{featured.srcset}}" data-sizes="auto"
+                            <img style="max-width:360px;" data-src="{{featured.feature_image}}" class="lazyload u-object-fit"
+                                    data-srcset="{{featured.feature_image}}" data-sizes="auto"
                                     src="{{featured.feature_image}}"
                                     alt="{{title}}">
                         </div>

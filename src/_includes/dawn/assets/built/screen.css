@@ -21,4 +21,8 @@ article.member-card {
     max-width: 1084px;
     margin: 0 auto;
 }
+
+.author-name{
+    display: none;
+}
 /*# sourceMappingURL=screen.css.map */

@@ -27,13 +27,10 @@ layout: dawn/default.njk
         {{post.meta_description}}
     </div>
     <div class="single-media kg-width-wide u-placeholder horizontal">
-        <img class="u-object-fit lazyautosizes lazyloaded" data-srcset="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 400w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 750w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 960w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 1140w" data-sizes="auto" src="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000" srcset="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 400w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 750w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 960w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 1140w" alt="{{post.title}}" sizes="920px">
+        <img style="max-width:972px;" data-src="{{post.feature_image}}" class="lazyload u-object-fit"
+                                    data-srcset="{{post.feature_image}}" data-sizes="auto"
+                                    src="{{post.feature_image}}"
+                                    alt="{{post.title}}">
     </div>
 </header>
 <div class="single-content kg-canvas u-text-format"/>
@@ -54,7 +51,8 @@ layout: dawn/default.njk
             {% for author in post.authors %}
                 <div class="author-image-placeholder u-placeholder square">
                     <a href="/membros/{{author.slug}}/" title="{{author.name}}">
-                        <img class="author-image u-object-fit lazyloaded" src="{{author.profile_image}}" data-srcset="{{author.profile_image}}" alt="Rede para o Decrescimento">
+                        <img style="max-width:70px;max-height:70px;" class="author-image u-object-fit lazyloaded" src="{{author.profile_image}}" data-srcset="{{author.profile_image}}" alt="{{author.name}}">
+                        <p class="author-name">{{author.name}}</p>
                     </a>
                 </div>
             {% endfor %}

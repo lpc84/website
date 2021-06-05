@@ -10,20 +10,18 @@
         <div class="post-feed container medium">
             {%for post in ghost_posts %}
                 <article class="feed {{post_class}}">
-                    <div class="feed-calendar">
-                        <div class="feed-calendar-day">
+                    <span class="feed-calendar">
+                        <span class="feed-calendar-day">
                             {{post.published_at | shortDate}}
-                        </div>
-                    </div>
-                    <h2 class="feed-title">{{ post.title }}</h2>
-                    <div class="feed-right">
-                        <div class="feed-length">
+                        </span>
+                    </span>
+                    <a href="/posts/{{post.slug}}" class="feed-title">{{ post.title }}</a>
+                    <span class="feed-right">
+                        <span class="feed-length">
                             {{post.html | readingTime}}
-                        </div>
-                    </div>
-                    <svg class="icon feed-icon">
-                        <use xlink:href="#chevron-right"></use>
-                    </svg>
+                        </span>
+                    </span>
+                    &nbsp;&gt;
                     <a class="u-permalink" href="/posts/{{post.slug}}" aria-label="{{post.title}}"></a>
                 </article>
 

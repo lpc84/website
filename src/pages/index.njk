@@ -30,13 +30,10 @@ layout: dawn/default.njk
     {% endif %}
     {% if post.feature_image %}
     <div class="single-media kg-width-wide u-placeholder horizontal">
-        <img class="u-object-fit lazyautosizes lazyloaded" data-srcset="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 400w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 750w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 960w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 1140w" data-sizes="auto" src="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000" srcset="{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 400w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 750w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 960w,
-{{post.feature_image}}?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIzfHxzaGF0dGVyZWR8ZW58MHx8fHwxNjE3Mjg4NTY5&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000 1140w" alt="{{post.title}}" sizes="920px">
+        <img style="max-width:972px;" data-src="{{post.feature_image}}" class="lazyload u-object-fit"
+                                    data-srcset="{{post.feature_image}}" data-sizes="auto"
+                                    src="{{post.feature_image}}"
+                                    alt="{{post.title}}">    
     </div>
     {% endif%}
 </header>
