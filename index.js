@@ -11,6 +11,4 @@ const renderIndex = (req, res) => {
 
 app.use('/*', createProxyMiddleware({ target: 'http://localhost:2368', changeOrigin: true }));
 
-
-
 app.listen(3000);

@@ -1,0 +1,46 @@
+---
+pagination:
+    data: events
+    size: 100
+    alias: posts
+permalink: "/events/"
+layout: dawn/default.njk
+---
+
+<div class="row">
+    {% for post in posts %}
+<section class="column" class="single-header kg-canvas">
+    <a href="/events/{{post.id}}">
+    <div style="margin-bottom:1em" class="single-media kg-width-wide u-placeholder horizontal">
+        <img style="max-width:1130px;" data-src="http://localhost:1337{{post.Banner.url}}" class="lazyload u-object-fit"
+                                    data-srcset="http://localhost:1337{{post.Banner.url}}" data-sizes="auto"
+                                    src="http://localhost:1337{{post.Banner.url}}"
+                                    alt="{{post.title}}">
+    </div>
+    <h3>{{post | eventDate}}</h3>
+
+    <h3>{{post.Title}}</h3>
+    </a>
+</section>
+
+    {% endfor %}
+</div> 
+
+<style>
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width:1130px;
+  margin: 1em auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 48%;
+  width:50%;
+}
+</style>
