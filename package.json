@@ -15,11 +15,11 @@
     "dotenv": "^10.0.0",
     "eleventy-plugin-reading-time": "0.0.1",
     "express": "^4.17.1",
-    "http-proxy-middleware": "^1.2.0",
-    "markdown-it": "^12.0.6"
+    "http-proxy-middleware": "^1.2.0"
   },
   "devDependencies": {
     "eleventy": "^1.0.6",
+    "markdown-it": "^12.0.6",
     "recursive-copy-cli": "^1.0.17"
   }
 }
