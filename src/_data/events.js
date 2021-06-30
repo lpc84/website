@@ -2,12 +2,12 @@ const axios = require('axios');
 
 
 module.exports = async function run(){
-    const { data } = await axios.post('http://localhost:1337/auth/local', {
+    const { data } = await axios.post(`${process.env.STRAPI_URL}/auth/local`, {
       identifier: process.env.STRAPI_API_KEY,
       password: process.env.STRAPI_API_PASS,
     });
 
-    const events = await axios.get('http://localhost:1337/events', {
+    const events = await axios.get(`${process.env.STRAPI_URL}/events`, {
     headers: {
         Authorization:
         `Bearer ${data.jwt}`,
