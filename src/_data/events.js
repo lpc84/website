@@ -8,10 +8,6 @@ module.exports = async function run(){
       password: process.env.STRAPI_API_PASS,
     });
 
-    console.log(`------------------------------------`)
-    console.log(data)
-    console.log(`------------------------------------`)
-
     const events = await axios.get(`${process.env.STRAPI_URL}/events`, {
     headers: {
         Authorization:

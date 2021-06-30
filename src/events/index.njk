@@ -12,9 +12,9 @@ layout: dawn/default.njk
 <section class="column" class="single-header kg-canvas">
     <a href="/events/{{post.id}}">
     <div style="margin-bottom:1em" class="single-media kg-width-wide u-placeholder horizontal">
-        <img style="max-width:1130px;" data-src="{{process.env.STRAPI_URL}}/{{post.Banner.url}}" class="lazyload u-object-fit"
-                                    data-srcset="{{process.env.STRAPI_URL}}/{{post.Banner.url}}" data-sizes="auto"
-                                    src="{{process.env.STRAPI_URL}}/{{post.Banner.url}}"
+        <img style="max-width:1130px;" data-src="{{env.STRAPI_URL}}/{{post.Banner.url}}" class="lazyload u-object-fit"
+                                    data-srcset="{{env.STRAPI_URL}}/{{post.Banner.url}}" data-sizes="auto"
+                                    src="{{env.STRAPI_URL}}/{{post.Banner.url}}"
                                     alt="{{post.title}}">
     </div>
     <h3>{{post | eventDate}}</h3>
