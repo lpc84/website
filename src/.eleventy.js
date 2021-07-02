@@ -26,21 +26,47 @@ async function imageShortcode(src, alt, sizes = [357, 600, 972]) {
     <img style="width:100%"
       src="${lowsrc.url}"
       data-src="${lowsrc.url}"
-      data-srcset="${lowsrc.url}"
+      data-srcset="${Object.values(metadata).map(imageFormat => {
+        return imageFormat.map(entry => entry.srcset).join(", ")
+      })}"
       data-sizes="auto"
       width="${lowsrc.width}"
       height="${lowsrc.height}"
       alt="${alt}"
       loading="lazy"
-      class="lazy"
+      class="lazy, lazyload"
       decoding="async">
   </picture>`;
 }
 
 module.exports = (eleventyConfig) => {
+  var responsiveImageOption = { responsive: {
+    'srcset': {
+      '*': [ {
+        width: 320,
+        rename: {
+          suffix: '-small'
+        }
+      }, {
+        width: 640,
+        rename: {
+          suffix: '-medium'
+        }
+      }, {
+        width: 920,
+        rename: {
+          suffix: '-big'
+        }
+      } ]
+    },
+    'sizes': {
+      '*': '(min-width: 36em) 33.3vw, 80vw, 100vw'
+    }
+  }
+};
   const md = new markdownIt({
     html: true
-  });
+  }).use(require('@gerhobbelt/markdown-it-responsive'), responsiveImageOption); ;
   eleventyConfig.addWatchTarget("./_includes/dawn/assets/built/main.min.js");
 
   // Nunjucks Filter
@@ -79,8 +105,7 @@ module.exports = (eleventyConfig) => {
     const month = date.getMonth();
     const startHour = date.getHours();
     const endHour = endDate.getHours();
-    console.log(startHour)
-    return `${day > 9 ? "" : "0"}${day} ${day > 9 ? "" : "0"}${months[month]} | ${startHour}h-${endHour}h`;
+    return `${day} ${months[month]} | ${startHour}h-${endHour}h`;
   });
 
   eleventyConfig.addNunjucksFilter("getMemberPosts", function (posts, member) {
@@ -96,7 +121,6 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addNunjucksFilter("markdown", function (content) {
     const res =  md.render(content);
-    console.log(console.log(res), content);
     return res;
   });
 
