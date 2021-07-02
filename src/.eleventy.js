@@ -2,6 +2,41 @@ const readingTime = require("eleventy-plugin-reading-time");
 const markdownIt = require("markdown-it");
 require('dotenv').config();
 
+const Image = require("@11ty/eleventy-img");
+
+async function imageShortcode(src, alt, sizes = [357, 600, 972]) {
+  if(alt === undefined) {
+    // You bet we throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+  }
+
+  let metadata = await Image(src, {
+    widths: sizes,
+    formats: ['webp', 'jpeg'],
+    outputDir: './_site/img/'
+  });
+
+  let lowsrc = metadata.jpeg[0];
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return `<picture >
+  ${Object.values(metadata).map(imageFormat => {
+    return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
+  }).join("\n")}
+    <img style="width:100%"
+      src="${lowsrc.url}"
+      data-src="${lowsrc.url}"
+      data-srcset="${lowsrc.url}"
+      data-sizes="auto"
+      width="${lowsrc.width}"
+      height="${lowsrc.height}"
+      alt="${alt}"
+      loading="lazy"
+      class="lazy"
+      decoding="async">
+  </picture>`;
+}
+
 module.exports = (eleventyConfig) => {
   const md = new markdownIt({
     html: true
@@ -16,6 +51,10 @@ module.exports = (eleventyConfig) => {
     const year = date.getFullYear();
     return `${day > 9 ? "" : "0"}${day}-${day > 9 ? "" : "0"}${month}-${year}`;
   });
+
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
   const months = [
     'Janeiro',

@@ -5,11 +5,10 @@
             {%for featured in featured_posts %}
                 <article class="post featured">
                     {% if featured.feature_image %}
-                        <div class="u-placeholder horizontal">
-                            <img style="max-width:360px;" data-src="{{featured.feature_image}}" class="lazyload u-object-fit"
-                                    data-srcset="{{featured.feature_image}}" data-sizes="auto"
-                                    src="{{featured.feature_image}}"
-                                    alt="{{title}}">
+                        <div class="u-placeholder">
+                            {%if featured.feature_image%}
+                              {%image featured.feature_image, featured.title %}
+                            {%endif%}
                         </div>
                     {% endif %}
                     <h3 class="post-title">{{featured.title}}</h3>

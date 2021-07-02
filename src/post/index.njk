@@ -26,12 +26,9 @@ layout: dawn/default.njk
     <div class="single-excerpt">
         {{post.meta_description}}
     </div>
-    <div class="single-media kg-width-wide u-placeholder horizontal">
-        <img style="max-width:972px;" data-src="{{post.feature_image}}" class="lazyload u-object-fit"
-                                    data-srcset="{{post.feature_image}}" data-sizes="auto"
-                                    src="{{post.feature_image}}"
-                                    alt="{{post.title}}">
-    </div>
+        {%if post.feature_image%}
+            {%image post.feature_image, post.title%}
+        {%endif %}
 </header>
 <div class="single-content kg-canvas u-text-format"/>
 {{post.html | safe}}

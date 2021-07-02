@@ -29,11 +29,10 @@ layout: dawn/default.njk
     </div>
     {% endif %}
     {% if post.feature_image %}
-    <div class="single-media kg-width-wide u-placeholder horizontal">
-        <img style="max-width:972px;" data-src="{{post.feature_image}}" class="lazyload u-object-fit"
-                                    data-srcset="{{post.feature_image}}" data-sizes="auto"
-                                    src="{{post.feature_image}}"
-                                    alt="{{post.title}}">    
+    <div class="single-media kg-width-wide u-placeholder">
+        {%if post.feature_image%}
+        {% image post.feature_image, post.title %}   
+        {%endif %}
     </div>
     {% endif%}
 </header>
