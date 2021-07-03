@@ -26,7 +26,7 @@ layout: dawn/default.njk
     {% endfor %}
 </div>
 <div>
-    <form action="/success" method="POST" name="subscription">
+    <form action="/" method="POST" name="subscription">
         <label for="fullName">Full name</label>
         <input 
             type="text" 
@@ -40,22 +40,6 @@ layout: dawn/default.njk
             name="email" 
             id="email" 
             placeholder="Tell us your e-mail id" />
-
-        <div>
-            <h2>I want to get it</h2>
-            <label>
-                <input 
-                    type="radio" 
-                    name="frequency" 
-                    value="daily" checked> Daily
-            </label>
-            <label>
-                <input 
-                    type="radio" 
-                    name="frequency" 
-                    value="weekly"> Weekly
-            </label>
-        </div>
 
         <button type="submit">Subscribe</button>
     </form>
