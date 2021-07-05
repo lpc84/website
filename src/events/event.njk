@@ -3,31 +3,27 @@ pagination:
     data: events
     size: 1
     alias: post
-permalink: "/events/{{ post.id }}/"
+permalink: "/events/{{ post.title | slug }}/"
 layout: dawn/default.njk
 ---
 <header class="single-header kg-canvas">
     <div class="single-meta">
         <span class="single-meta-item single-meta-date">
-            <time datetime="2021-03-03">
-                {{post.published_at | shortDate}}
+            <time>
+                {{post.type}} | {{post | eventDate}}
             </time>
 
         </span>
     </div>
     <h1 class="single-title">{{post.title}}</h1>
-    <div class="single-excerpt">
-        {{post.meta_description}}
-    </div>
     <div class="single-media kg-width-wide u-placeholder">
-        <img style="max-width:972px;" data-src="{{process.env.STRAPI_URL}}{{post.Banner.url}}" class="lazyload u-object-fit"
-                                    data-srcset="{{process.env.STRAPI_URL}}{{post.Banner.url}}" data-sizes="auto"
-                                    src="{{process.env.STRAPI_URL}}{{post.Banner.url}}"
-                                    alt="{{post.title}}">
+        {%if post.banner[0].url%}
+        {% image post.banner[0].url, post.title %}
+        {%endif%}
     </div>
 </header>
 <div class="single-content kg-canvas u-text-format"/>
-{{post.Description | markdown | safe}}
+{{post.notes | markdown | safe}}
 </div>
 <footer class="single-footer container medium">
 <div class="single-footer-left">

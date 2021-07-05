@@ -44,7 +44,20 @@
         <div class="site">
             <header class="site-header container">
                 {% include './partials/navigation.njk' %}
+                {% include './partials/subscribe_form.njk' %}
             </header>
+            <div class="mobile-menu hidden-lg hidden-xl">
+            <div class="container">
+                <nav class="mobile-nav">
+                    <a class="menu-item menu-item-{{slug}}" href="/">Inicio</a>
+                    <a class="menu-item menu-item-{{slug}}" href="/pages/o-que-e-o-decrescimento/">Decrescimento?</a>
+                    <a class="menu-item menu-item-{{slug}}" href="/pages/sobre-nos/">Sobre Nós</a>
+                    <a class="menu-item menu-item-{{slug}}" href="/events/">Agenda</a>
+                    <a class="menu-item menu-item-{{slug}}" href="javascript:toggleSubscribeForm()">Subscrever</a>
+
+                </nav>
+            </div>
+        </div>
 
             {{ content | safe}}
             {% include './partials/footer.njk' %}

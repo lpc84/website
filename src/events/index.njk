@@ -10,36 +10,21 @@ layout: dawn/default.njk
 <div class="row">
     {% for post in posts %}
 <section class="column" class="single-header kg-canvas">
-    <a href="/events/{{post.id}}">
+    <a href="/events/{{post.title | slug}}">
     <div style="margin-bottom:1em" class="single-media kg-width-wide u-placeholder">
-        {%if post.Banner.url%}
-        {% image env.STRAPI_URL+post.Banner.url, post.Title %}
+        {%if post.banner[0].url%}
+        {% image post.banner[0].url, post.title %}
         {%endif%}
         
     </div>
     <h3>{{post | eventDate}}</h3>
 
-    <h3>{{post.Title}}</h3>
+    <h3>{{post.title}}</h3>
     </a>
 </section>
 
     {% endfor %}
 </div>
-<div>
-    <form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Nome: <input type="text" name="name" /></label>   
-  </p>
-  <p>
-    <label>Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <button type="submit">Subscrever</button>
-  </p>
-</form>
-
-</div>
-
 <style>
 .row {
   display: flex;

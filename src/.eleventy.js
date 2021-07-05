@@ -99,8 +99,8 @@ module.exports = (eleventyConfig) => {
 
   // Nunjucks Filter
   eleventyConfig.addNunjucksFilter("eventDate", function (value) {
-    const date = new Date(value.StartDate);
-    const endDate = new Date(value.EndDate);
+    const date = new Date(value.startDate);
+    const endDate = new Date(value.endDate);
     const day = date.getDate();
     const month = date.getMonth();
     const startHour = date.getHours();

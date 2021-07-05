@@ -1,23 +1,17 @@
-const axios = require('axios');
+const axios = require("axios");
+const Airtable = require("airtable");
 
+async function run(){
+  const airtable = new Airtable({ apiKey: process.env.AIRTABLE_KEY });
+  const base = airtable.base("appcCARRkc6aEqFgb");
+  const res = (await base("Eventos")
+    .select({
+      // Selecting the first 3 records in Grid view:
+      maxRecords: 100,
+      view: "Grid view",
+    })
+    .all()).map(x => x.fields);
+  return res;
+}
 
-module.exports = async function run(){
-   
-    const { data } = await axios.post(`${process.env.STRAPI_URL}/auth/local`, {
-      identifier: process.env.STRAPI_API_KEY,
-      password: process.env.STRAPI_API_PASS,
-    });
-
-    const events = await axios.get(`${process.env.STRAPI_URL}/events`, {
-    headers: {
-        Authorization:
-        `Bearer ${data.jwt}`,
-    },
-    });
-
-    return events.data;
-
-    //http://localhost:1337/content-manager/collection-types/application::event.event?page=1&pageSize=10&_sort=Title:ASC
-    
-
-};
+module.exports = run();

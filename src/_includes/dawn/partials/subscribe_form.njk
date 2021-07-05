@@ -1,0 +1,90 @@
+<div id="subscribe_area" style="display:none">
+    <div  style="position: absolute;
+width: 100vw;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: var(--white-color);
+z-index: 90;
+filter: blur(8px);
+-webkit-filter: blur(8px);
+opacity: .7;
+top: 0;
+left: 0;"></div>
+    <div id="subscribe_background" style="
+position: absolute;
+width: 100vw;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 100;
+top: 0;
+left: 0;
+">
+        <form id="subscribe_form" style="
+    display: block;
+    background-color: var(--white-color);
+    width: 50vw;
+    min-width: 30em;
+    padding: 5vw;
+    border: 1px solid var(--primary-text-color);
+    border-radius: 5px;
+    " name="subscribe" method="POST" data-netlify="true">
+            <h2>Subscreva à nossa newsletter</h2>
+            <p>
+                <label>Primeiro Nome: <input placeholder="ex: Serge" type="text" name="firstName"/></label>
+            </p>
+            <p>
+                <label>Último Nome: <input placeholder="ex: Latouche" type="text" name="lastName"/></label>
+            </p>
+            <p>
+                <label>Email: <input placeholder="...o seu email" type="email" name="email"/></label>
+            </p>
+            <p>
+                <button class="button members-subscribe gh-portal-close" style="width: 100%;
+padding: 2em;" type="submit">Subscrever</button>
+                <a  class="button members-subscribe gh-portal-close" 
+    style="color: var(--primary-text-color);padding: 2em;width:100%;margin-top:1em;"
+     href="javascript:toggleSubscribeForm()">Cancelar</a>
+            </p>
+        </form>
+
+    </div>
+    <script>
+
+        // define a handler
+        function doc_keyEscape(e) {
+
+            // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
+            if (e.key === 'Escape') {
+                // call your function to do the thing
+                toggleSubscribeForm();
+            }
+        }
+        function toggleSubscribeForm() {
+            var elemento = document.getElementById("subscribe_area");
+            if (elemento.style.display === 'none') {
+                elemento.style.display = 'block';
+
+                // register the handler
+                document.addEventListener('keyup', doc_keyEscape, false);
+            } else {
+                // unregister the handler
+                document.removeEventListener('keyup', doc_keyEscape);
+                elemento.style.display = 'none';
+            }
+        }
+        document
+            .getElementById("subscribe_background")
+            .addEventListener('click', function (event) {
+                toggleSubscribeForm()
+            });
+        document
+            .getElementById("subscribe_form")
+            .addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+    </script>
+</div>

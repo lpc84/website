@@ -2,3 +2,6 @@ src/_site/
 node_modules/
 src/.env
 src/.cache
+
+# Local Netlify folder
+.netlify

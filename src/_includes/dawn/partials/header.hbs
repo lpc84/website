@@ -10,7 +10,7 @@
     </div>
     {{#if @site.navigation}}
         <nav class="main-nav hidden-xs hidden-sm hidden-md">
-            {{navigation}}
+            {% include './partials/navigation.njk' %}
             {{#if @labs.members}}
                 <button class="button-icon menu-item-button js-modal" data-modal="search" aria-label="Search">
                     <svg class="icon">
@@ -27,20 +27,17 @@
         </button>
         <div class="burger hidden-lg hidden-xl">
             <div class="burger-bar"></div>
-            <div class="burger-bar"></div>
         </div>
 
         <div class="mobile-menu hidden-lg hidden-xl">
             <div class="container">
                 <nav class="mobile-nav">
-                    {{navigation}}
-                    {{#if @labs.members}}
-                        {{#if @member}}
-                            
-                        {{else}}
-                            <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscrever</button>
-                        {{/if}}
-                    {{/if}}
+                    <a class="menu-item menu-item-{{slug}}" href="/">Inicio</a>
+    <a class="menu-item menu-item-{{slug}}" href="/pages/o-que-e-o-decrescimento/">Decrescimento?</a>
+    <a class="menu-item menu-item-{{slug}}" href="/pages/sobre-nos/">Sobre Nós</a>
+    <a class="menu-item menu-item-{{slug}}" href="/events/">Agenda</a>
+    <a class="menu-item menu-item-{{slug}}" href="javascript:toggleSubscribeForm()">Subscrever</a>
+
                 </nav>
             </div>
         </div>
