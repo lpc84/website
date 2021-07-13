@@ -13,7 +13,9 @@ permalink: /membros/{{member.slug}}/
 
         <section class="author container small">
             <div class="author-image-placeholder u-placeholder square">
-                <img class="author-image u-object-fit" src="{{member.profile_image}}" alt="{{member.name}}">
+                {%if member.profile_image[0].url%}
+                                        {% image member.profile_image[0].url, member.name, [140 ,200], ["author-image"], ["u-object-fit"] %}
+                                    {%endif%}
             </div>
             <h1 class="author-name">
                 <a href="{{member.website}}" target="_blank" rel="noopener noreferrer">{{member.name}}</a>

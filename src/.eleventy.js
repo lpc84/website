@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const Image = require("@11ty/eleventy-img");
 
-async function imageShortcode(src, alt, sizes = [357, 600, 972]) {
+async function imageShortcode(src, alt, sizes = [357, 600, 972], pictureClass = [], imageClass= []) {
   if(alt === undefined) {
     // You bet we throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
@@ -19,7 +19,7 @@ async function imageShortcode(src, alt, sizes = [357, 600, 972]) {
   let lowsrc = metadata.jpeg[0];
 
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-  return `<picture >
+  return `<picture class="${pictureClass.join(' ')}">
   ${Object.values(metadata).map(imageFormat => {
     return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
   }).join("\n")}
@@ -34,7 +34,7 @@ async function imageShortcode(src, alt, sizes = [357, 600, 972]) {
       height="${lowsrc.height}"
       alt="${alt}"
       loading="lazy"
-      class="lazy, lazyload"
+      class="${imageClass.join(' ')} lazy lazyload"
       decoding="async">
   </picture>`;
 }

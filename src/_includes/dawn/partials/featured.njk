@@ -5,11 +5,9 @@
             {%for featured in featured_posts %}
                 <article class="post featured">
                     {% if featured.feature_image %}
-                        <div class="u-placeholder">
                             {%if featured.feature_image%}
-                              {%image featured.feature_image, featured.title %}
+                              {%image featured.feature_image, featured.title, [357, 600, 972], ["u-placeholder"] , ["u-object-fit"] %}
                             {%endif%}
-                        </div>
                     {% endif %}
                     <h3 class="post-title">{{featured.title}}</h3>
                     <a class="u-permalink" href="{{env.URL}}/posts/{{featured.slug}}"

@@ -1,4 +1,3 @@
-const axios = require("axios");
 const Airtable = require("airtable");
 
 async function run(){

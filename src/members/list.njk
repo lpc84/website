@@ -12,12 +12,13 @@ permalink: /membros/
                     <article class="member-card ">
                         <a href="/author/{{member.slug}}/" title="{{member.name}}"></a>
                         <div class="author">
+                        {{member | log}}
                             <a href="/membros/{{member.slug}}"
                             title="{{member.name}}">
                                 <div class="author-image-placeholder u-placeholder square">
-                                    <img class="author-image u-object-fit"
-                                    src="{{member.profile_image}}"
-                                    alt="{{member.name}}">
+                                    {%if member.profile_image[0].url%}
+                                        {% image member.profile_image[0].url, member.name, [140 ,200], ["author-image"], ["u-object-fit"] %}
+                                    {%endif%}
                                 </div>
                             </a>
                             <h1 class="author-name">
@@ -26,6 +27,7 @@ permalink: /membros/
                                 href="/membros/{{member.slug}}/" target="_blank"
                                 rel="noopener noreferrer">{{member.name}}</a>
                             </h1>
+                            <span class="author-meta">{{member.location}}</span>
                             <div class="author-bio">{{member.bio}}
                             </div>
                             <div class="share author-social" style="margin-top:0;"></div>

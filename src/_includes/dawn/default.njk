@@ -13,7 +13,8 @@
         <script>
             var siteUrl = '{{env.URL}}';
         </script>
-
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script>
             var localTheme = localStorage.getItem('dawn_theme');
             switch (localTheme) {
@@ -53,6 +54,7 @@
                     <a class="menu-item menu-item-{{slug}}" href="/pages/o-que-e-o-decrescimento/">Decrescimento?</a>
                     <a class="menu-item menu-item-{{slug}}" href="/pages/sobre-nos/">Sobre Nós</a>
                     <a class="menu-item menu-item-{{slug}}" href="/events/">Agenda</a>
+                    <a class="menu-item menu-item-{{slug}}" href="/membros/index.html">Membros</a>
                     <a class="menu-item menu-item-{{slug}}" href="javascript:toggleSubscribeForm()">Subscrever</a>
 
                 </nav>

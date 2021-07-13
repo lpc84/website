@@ -23,7 +23,8 @@ z-index: 100;
 top: 0;
 left: 0;
 ">
-        <form id="subscribe_form" style="
+        <form id="subscribe_form"
+        style="
     display: block;
     background-color: var(--white-color);
     width: 50vw;
@@ -31,26 +32,31 @@ left: 0;
     padding: 5vw;
     border: 1px solid var(--primary-text-color);
     border-radius: 5px;
-    " name="subscribe" method="POST" action="/.netlify/functions/subscribe">
+    " name="subscribe" >
+
             <h2>Subscreva à nossa newsletter</h2>
-            <p>
-                <label>Primeiro Nome: <input placeholder="ex: Serge" type="text" name="firstName"/></label>
+            <p class="hidden">
+                <input name="bot-field" type="text"/>
             </p>
             <p>
-                <label>Último Nome: <input placeholder="ex: Latouche" type="text" name="lastName"/></label>
+                <label>Primeiro Nome: <input required="true" v-model="firstName" placeholder="ex: Serge" type="text" name="firstName"/></label>
             </p>
             <p>
-                <label>Email: <input placeholder="...o seu email" type="email" name="email"/></label>
+                <label>Último Nome: <input required="true" v-model="lastName" placeholder="ex: Latouche" type="text" name="lastName"/></label>
             </p>
             <p>
-                <button class="button members-subscribe gh-portal-close" style="width: 100%;
-padding: 2em;" type="submit">Subscrever</button>
+                <label>Email:  <input required="true" v-model="email" placeholder="...o seu email" type="email" name="email"/></label>
+            </p>
+            
+
+            <p>
+                <a href="#" v-on:click="submit" class="button members-subscribe gh-portal-close" style="width: 100%;
+padding: 2em;" type="submit">Subscrever</a>
                 <a  class="button members-subscribe gh-portal-close" 
     style="color: var(--primary-text-color);padding: 2em;width:100%;margin-top:1em;"
      href="javascript:toggleSubscribeForm()">Cancelar</a>
             </p>
         </form>
-
     </div>
     <script>
 
@@ -86,5 +92,28 @@ padding: 2em;" type="submit">Subscrever</button>
             .addEventListener('click', function (event) {
                 event.stopPropagation();
             });
+
+        Vue
+            .createApp({
+                data() {
+                    return {firstName: '1nome', lastName: '2Nome', email: 'email@email.com'}
+                },
+                methods: {
+                    submit: function() {
+                        console.log({
+                            firstName: this.firstName,
+                            lastName: this.lastName,
+                            email: this.email,
+                        })
+                        axios.post("/.netlify/functions/subscribe/subscribe", {
+                            firstName: this.firstName,
+                            lastName: this.lastName,
+                            email: this.email,
+                        })
+                            .then(response => console.log(this.response)); 
+                    }
+                }
+            })
+            .mount('#subscribe_form')
     </script>
 </div>
