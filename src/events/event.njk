@@ -17,8 +17,10 @@ layout: dawn/default.njk
     </div>
     <h1 class="single-title">{{post.title}}</h1>
     <div class="single-media kg-width-wide u-placeholder">
-        {%if post.banner[0].url%}
-        {% image post.banner[0].url, post.title %}
+        {%if post.banner[0].url %}
+            <div class="u-placeholder horizontal">
+                {% image post.banner[0].url, post.title, [357, 600, 972], [], ["u-object-fit"] %}
+            </div>
         {%endif%}
     </div>
 </header>

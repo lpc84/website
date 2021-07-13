@@ -12,8 +12,10 @@ layout: dawn/default.njk
 <section class="column" class="single-header kg-canvas">
     <a href="/events/{{post.title | slug}}">
     <div style="margin-bottom:1em" class="single-media kg-width-wide u-placeholder">
-        {%if post.banner[0].url%}
-        {% image post.banner[0].url, post.title %}
+        {%if post.banner[0].url %}
+            <div class="u-placeholder horizontal">
+                {% image post.banner[0].url, post.title, [357, 600, 972], [], ["u-object-fit"] %}
+            </div>
         {%endif%}
         
     </div>

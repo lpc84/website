@@ -7,7 +7,7 @@ async function run(){
     .select({
       // Selecting the first 3 records in Grid view:
       maxRecords: 100,
-      view: "Grid view",
+      view: "Next Events",
     })
     .all()).map(x => x.fields);
   return res;
