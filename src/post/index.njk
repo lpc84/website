@@ -51,7 +51,7 @@ layout: dawn/default.njk
                 <div class="author-image-placeholder u-placeholder square" style="height: 70px;width: 70px;border-radius: 50%;">
                     <a href="/membros/{{author.slug}}/" title="{{author.name}}">
                         {%if author.profile_image %}
-                            {% image author.profile_image, author.name, [140 ,200], ["author-image"], ["u-object-fit"] %}
+                            {% image author.profile_image, author.name, [70], ["author-image"], ["u-object-fit"] %}
                         {% endif %}
                         <p class="author-name">{{author.name}}</p>
                     </a>
