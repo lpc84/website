@@ -6,7 +6,9 @@
                 <article class="post featured">
                     {% if featured.feature_image %}
                             {%if featured.feature_image%}
-                              {%image featured.feature_image, featured.title, [357, 600, 972], ["u-placeholder"] , ["u-object-fit"] %}
+                                <div class="u-placeholder horizontal">
+                                    {%image featured.feature_image, featured.title, [357, 600, 972], [] , ["u-object-fit"] %}                                
+                                </div>
                             {%endif%}
                     {% endif %}
                     <h3 class="post-title">{{featured.title}}</h3>
