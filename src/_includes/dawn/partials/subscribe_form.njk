@@ -100,11 +100,6 @@ padding: 2em;" type="submit">Subscrever</a>
                 },
                 methods: {
                     submit: function() {
-                        console.log({
-                            firstName: this.firstName,
-                            lastName: this.lastName,
-                            email: this.email,
-                        })
                         axios.post("/.netlify/functions/subscribe/subscribe", {
                             firstName: this.firstName,
                             lastName: this.lastName,

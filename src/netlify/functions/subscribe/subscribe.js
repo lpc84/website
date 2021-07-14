@@ -4,7 +4,6 @@ exports.handler = async (event, context) => {
   const airtable = new Airtable({ apiKey: process.env.AIRTABLE_KEY });
   const base = airtable.base("appcCARRkc6aEqFgb");
     const requestBody = JSON.parse(event.body);
-    console.log(requestBody)
   base("Subscritores").create(
     [
       {

@@ -100,12 +100,11 @@ module.exports = (eleventyConfig) => {
   // Nunjucks Filter
   eleventyConfig.addNunjucksFilter("eventDate", function (value) {
     const date = new Date(value.startDate);
-    const endDate = new Date(value.endDate);
     const day = date.getDate();
     const month = date.getMonth();
-    const startHour = date.getHours();
-    const endHour = endDate.getHours();
-    return `${day} ${months[month]} | ${startHour}h-${endHour}h`;
+
+    const duration = value.duration;
+    return `${day} ${months[month]} | ${duration}h`;
   });
 
   eleventyConfig.addNunjucksFilter("getMemberPosts", function (posts, member) {
