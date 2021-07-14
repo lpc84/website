@@ -23,7 +23,7 @@ article.member-card {
 }
 
 .hidden{
-    display: none;
+    visibility: hidden;
 }
 
 .event-photo{

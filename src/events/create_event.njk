@@ -14,9 +14,6 @@ layout: dawn/default.njk
     {%image "https://images.unsplash.com/photo-1511871893393-82e9c16b81e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3450&q=80", "Novo Evento", [357, 600, 972], [] , ["u-object-fit"] %}
 </div>
 <form name="new-event" netlify-honeypot="bot-field" method="POST" data-netlify="true">
-    <p class="hidden">
-        <label>Don’t fill this out if you’re human: <input name="bot-field"/></label>
-    </p>
     <p>
         <strong>Titulo do Evento<span style="color:red">*</span></strong>
         <input type="text" name="title" required="true"></input>
@@ -52,6 +49,9 @@ layout: dawn/default.njk
         <input type="text" name="local"></input>
     </p>
     <button type="submit" class="button members-subscribe gh-portal-close">Submeter Evento</button> ou voltar à <a href="/events/">agenda</a>.
+        <span class="hidden" style="margin:0">
+        <label>Don’t fill this out if you’re human: <input name="bot-field"/></label>
+    </span>
     </form>
 </div>
 <footer class="single-footer container medium"></footer>
