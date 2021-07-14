@@ -6,41 +6,48 @@ pagination:
 permalink: "/events/"
 layout: dawn/default.njk
 ---
-
+<div class="row">
+    <h2>Próximos Eventos</h2>
+</div>
 <div class="row">
     {% for post in posts %}
-<section class="column" class="single-header kg-canvas">
-    <a href="/events/{{post.title | slug}}">
-    <div style="margin-bottom:1em" class="single-media kg-width-wide u-placeholder">
-        {%if post.banner[0].url %}
-            <div class="u-placeholder horizontal">
-                {% image post.banner[0].url, post.title, [357, 600, 972], [], ["u-object-fit"] %}
-            </div>
-        {%endif%}
-        
-    </div>
-    <h4 style="margin-bottom: .3em">{{post | eventDate}} | {{post.local}}</h4>
-    <h3>{{post.title}}</h3>
-    </a>
-</section>
+        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;" class="column" class="single-header kg-canvas">
+            <a href="/events/{{post.title | slug}}">
+                <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
+                    {%if post.banner[0].url %}
+                        <div class="u-placeholder horizontal">
+                            {% image post.banner[0].url, post.title, [357, 600, 972], [], ["u-object-fit", "event-photo"] %}
+                        </div>
+                        {%endif%}
 
-    {% endfor %}
+                    </div>
+                    <div style="margin-left: 2em">
+                        <h4 style="margin-bottom: .3em">{{post | eventDate}} | {{post.local}} | {{post.type}}</h4>
+                        <h3>{{post.title}}</h3>
+                    </div>
+                </a>
+            </section>
+
+        {% endfor %}
+    </div>
+    <div class="single-content kg-canvas u-text-format"/>
+        <p>Tem um evento que deseja partilhar na rede? Preencha <a href="/events/new-event/">este formulário</a> e se estiver de acordo com a nossa causa nós divulgamos</p>
 </div>
 <style>
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-  max-width:1130px;
-  margin: 1em auto;
-}
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1130px;
+        margin: 1em auto;
+    }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 48%;
-  width:50%;
-}
+    .column {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 48%;
+        width: 50%;
+    }
 </style>
