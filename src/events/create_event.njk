@@ -11,47 +11,47 @@ layout: dawn/default.njk
 </header>
 <div class="single-content kg-canvas u-text-format"/>
 <div class="u-placeholder horizontal">
-        {%image "https://images.unsplash.com/photo-1511871893393-82e9c16b81e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3450&q=80", "Novo Evento", [357, 600, 972], [] , ["u-object-fit"] %}
-    </div>
-    <form name="new-event" netlify-honeypot="bot-field" method="POST" data-netlify="true">
-        <p class="hidden">
-    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-  </p>
+    {%image "https://images.unsplash.com/photo-1511871893393-82e9c16b81e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3450&q=80", "Novo Evento", [357, 600, 972], [] , ["u-object-fit"] %}
+</div>
+<form name="new-event" netlify-honeypot="bot-field" method="POST" data-netlify="true">
+    <p class="hidden">
+        <label>Don’t fill this out if you’re human: <input name="bot-field"/></label>
+    </p>
+    <p>
         <strong>Titulo do Evento<span style="color:red">*</span></strong>
         <input type="text" name="title" required="true"></input>
-        <p/>
+    </p>
+    <p>
         <strong>Data de Inicio do Evento<span style="color:red">*</span></strong>
         <small>Colocar a dia e a hora a que vai ocorrer o evento</small>
         <input type="datetime-local" name="startDate" required="true"></input>
-        <p/>
-        
+    </p>
+    <p>
         <strong>Data de Fim do Evento</strong>
         <small>Colocar o dia e a hora em que o evento acaba</small>
         <input type="datetime-local" name="endDate" required="true"></input>
-        <p/>
-
+    </p>
+    <p>
         <strong>Tipo de Evento</strong>
         <small>ex: webinar, convivio, workshop</small>
         <input type="text" name="type"></input>
-        <p/>
-        
+    </p>
+    <p>
         <strong>Descrição do Evento <span style="color:red">*</span></strong>
         <small>Colocar informação importante, como logística, (ex: levar chapéu e água), itinerário, preço, etc;</small>
         <textarea type="text" name="notes" required="true" rows="10"></textarea>
-        <p/>
-        
-        <strong>Foto</strong> 
+    </p>
+    <p>
+        <strong>Foto</strong>
         <small>Esta foto vai ser usada para abastecer o site</small>
         <input type="file" name="banner"></input>
-        <p/>
-        
+    </p>
+    <p>
         <strong>Localidade</strong>
         <small>Ex: Lisboa</small>
         <input type="text" name="local"></input>
-        <p/>
-        <button type="submit" class="button members-subscribe gh-portal-close">Submeter Evento</button> ou voltar à <a href="/events/">agenda</a>.
+    </p>
+    <button type="submit" class="button members-subscribe gh-portal-close">Submeter Evento</button> ou voltar à <a href="/events/">agenda</a>.
     </form>
 </div>
-<footer class="single-footer container medium">
-
-</footer>
+<footer class="single-footer container medium"></footer>
