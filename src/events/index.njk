@@ -1,7 +1,7 @@
 ---
 pagination:
-    data: events
-    size: 100
+    data: events_list
+    size: 2
     alias: posts
 permalink: "/events/"
 layout: dawn/default.njk
@@ -10,7 +10,8 @@ layout: dawn/default.njk
     <h2>Próximos Eventos</h2>
 </div>
 <div class="row">
-    {% for post in posts %}
+{{ posts | log }}
+    {% for post in posts[0] %}
         <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;" class="column" class="single-header kg-canvas">
             <a href="/events/{{post.title | slug}}">
                 <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
@@ -31,8 +32,34 @@ layout: dawn/default.njk
         {% endfor %}
     </div>
     <div class="single-content kg-canvas u-text-format"/>
-        <p>Tem um evento que deseja partilhar na rede? Preencha <a href="/events/new-event/">este formulário</a> que nós revemos e divulgamos</p>
+        <p></p>
+        <h3>Tem um evento que deseja partilhar com a rede? Preencha <a href="/events/new-event/">este formulário</a> que nós revemos e divulgamos</h3>
+        <p></p>
 </div>
+<div class="row">
+    <h2>Eventos Passados</h2>
+</div>
+<div class="row">
+    {% for post in posts[1] %}
+        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;" class="column" class="single-header kg-canvas">
+            <a href="/events/{{post.title | slug}}">
+                <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
+                    {%if post.banner[0].url %}
+                        <div class="u-placeholder horizontal">
+                            {% image post.banner[0].url, post.title, [357, 600, 972], [], ["u-object-fit", "event-photo"] %}
+                        </div>
+                        {%endif%}
+
+                    </div>
+                    <div style="margin-left: 2em">
+                        <h4 style="margin-bottom: .3em">{{post | eventDate}} | {{post.local}} | {{post.type}}</h4>
+                        <h3>{{post.title}}</h3>
+                    </div>
+                </a>
+            </section>
+
+        {% endfor %}
+    </div>
 <style>
     .row {
         display: flex;
@@ -49,5 +76,14 @@ layout: dawn/default.njk
         flex-direction: column;
         flex-basis: 48%;
         width: 50%;
+    }
+
+    
+    @media (max-width: 536px) {
+        .column {
+            align-items: center;
+            flex-basis: 95%;
+            width: 100%;
+        }
     }
 </style>

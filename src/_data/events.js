@@ -1,16 +1,20 @@
 const Airtable = require("airtable");
 
 async function run(){
+  const res = getEvents("Active Events")
+  return res;
+}
+
+async function getEvents(eventView){
   const airtable = new Airtable({ apiKey: process.env.AIRTABLE_KEY });
   const base = airtable.base("appcCARRkc6aEqFgb");
-  const res = (await base("Eventos")
-    .select({
-      // Selecting the first 3 records in Grid view:
-      maxRecords: 100,
-      view: "Next Events",
-    })
-    .all()).map(x => x.fields);
-  return res;
+  return (await base("Eventos")
+      .select({
+        // Selecting the first 3 records in Grid view:
+        maxRecords: 100,
+        view: eventView,
+      })
+      .all()).map(x => x.fields);
 }
 
 module.exports = run();
