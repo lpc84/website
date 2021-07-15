@@ -10,7 +10,6 @@ layout: dawn/default.njk
     <h2>Próximos Eventos</h2>
 </div>
 <div class="row">
-{{ posts | log }}
     {% for post in posts[0] %}
         <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;" class="column" class="single-header kg-canvas">
             <a href="/events/{{post.title | slug}}">
