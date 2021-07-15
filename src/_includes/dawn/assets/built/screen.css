@@ -28,6 +28,8 @@ article.member-card {
 
 .event-photo{
     border-radius: calc(1em - 1px) calc(1em - 1px) 0 0;
+    object-position: top;
+
 }
 
 /*# sourceMappingURL=screen.css.map */
