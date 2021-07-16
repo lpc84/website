@@ -12,29 +12,33 @@ permalink: /membros/
                     <article class="member-card ">
                         <a href="/author/{{member.slug}}/" title="{{member.name}}"></a>
                         <div class="author">
-                        {{member }}
                             <a href="/membros/{{member.slug}}"
                             title="{{member.name}}">
                                 <div style="border-radius:50%" class="author-image-placeholder u-placeholder square">
                                     {%if member.profile_image[0].url%}
                                         {% image member.profile_image[0].url, member.name, [70], ["author-image"], ["u-object-fit"] %}
-                                    {%endif%}
-                                </div>
-                            </a>
-                            <h1 class="author-name">
-                                <a href="/membros/{{member.slug}}/" title="{member.name}"></a>
-                                <a
+                                        {%endif%}
+                                    </div>
+                                </a>
+                                <h1 class="author-name">
+                                    <a href="/membros/{{member.slug}}/" title="{member.name}"></a>
+                                    <a
                                 href="/membros/{{member.slug}}/" target="_blank"
                                 rel="noopener noreferrer">{{member.name}}</a>
-                            </h1>
-                            <span class="author-meta">{{member.location}}</span>
-                            <div class="author-bio">{{member.bio}}
+                                </h1>
+                                <span class="author-meta">{{member.location}}</span>
+                                <div class="author-bio">{{member.bio}}
+                                </div>
+                                <div class="share author-social" style="margin-top:0;"></div>
                             </div>
-                            <div class="share author-social" style="margin-top:0;"></div>
-                        </div>
-                    </article>
-                {% endfor %}
+                        </article>
+                    {% endfor %}
+                    <div class="single-content kg-canvas u-text-format"/>
 
+                    <p></p>
+                    <h3>Custuma participar na rede e quer estar nesta página? Preencha <a href="https://airtable.com/shrRVfbvFG99A0Cjb">este formulário</a> que nós adicionamos o seu perfil.</h3>
+                    <p></p>
+                </div>
 
             </div>
         </div>

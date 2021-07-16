@@ -6,6 +6,13 @@ pagination:
     size: 1
     alias: member
 permalink: /membros/{{member.slug}}/
+eleventyComputed:
+  meta:
+    title: "{{ pagination.items[0].name }}"
+    description: "{{ pagination.items[0].bio }}"
+    published_at: "{{ pagination.items[0].startDate }}"
+    image: "{% if pagination.items[0].profile_image %}{{ pagination.items[0].profile_image }}{% endif %}"
+
 ---
 
 <div class="site-content">

@@ -5,6 +5,12 @@ pagination:
     alias: post
 permalink: "/events/{{ post.title | slug }}/"
 layout: dawn/default.njk
+eleventyComputed:
+  meta:
+    title: "{{ pagination.items[0].title }}"
+    description: "{{ pagination.items[0].notes }}"
+    published_at: "{{ pagination.items[0].startDate }}"
+    image: "{% if pagination.items[0].banner[0].url %}{{ pagination.items[0].banner[0].url }}{% endif %}"
 ---
 <header class="single-header kg-canvas">
     <div class="single-meta">

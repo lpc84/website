@@ -32,7 +32,7 @@ left: 0;
     padding: 5vw;
     border: 1px solid var(--primary-text-color);
     border-radius: 5px;
-    " name="subscribe" >
+    " name="subscribe" action="/subscribe-success/" netlify-honeypot="bot-field" method="POST" data-netlify="true" >
 
             <h2>Subscreva à nossa newsletter</h2>
             <p class="hidden">
@@ -50,12 +50,15 @@ left: 0;
             
 
             <p>
-                <a href="#" v-on:click="submit" class="button members-subscribe gh-portal-close" style="width: 100%;
-padding: 2em;" type="submit">Subscrever</a>
+                <button type="submit" class="button members-subscribe gh-portal-close" style="width: 100%;
+padding: 2em;" >Subscrever</button>
                 <a  class="button members-subscribe gh-portal-close" 
     style="color: var(--primary-text-color);padding: 2em;width:100%;margin-top:1em;"
      href="javascript:toggleSubscribeForm()">Cancelar</a>
             </p>
+            <span class="hidden" style="margin:0">
+        <label>Don’t fill this out if you’re human: <input name="bot-field"/></label>
+    </span>
         </form>
     </div>
     <script>
@@ -92,23 +95,5 @@ padding: 2em;" type="submit">Subscrever</a>
             .addEventListener('click', function (event) {
                 event.stopPropagation();
             });
-
-        Vue
-            .createApp({
-                data() {
-                    return {firstName: '', lastName: '', email: ''}
-                },
-                methods: {
-                    submit: function() {
-                        axios.post("/.netlify/functions/subscribe/subscribe", {
-                            firstName: this.firstName,
-                            lastName: this.lastName,
-                            email: this.email,
-                        })
-                            .then(response => console.log(this.response)); 
-                    }
-                }
-            })
-            .mount('#subscribe_form')
     </script>
 </div>

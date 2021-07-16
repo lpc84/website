@@ -9,12 +9,27 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap">
-
+<meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Rede para o Descrescimento" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{meta.title}}" />
+    <meta property="og:description" content="{{meta.description}}" />
+    <meta property="og:url" content="{{env.URL}}{{page.url}}" />
+    <meta property="og:image" content="{{meta.image}}" />
+    <meta property="article:published_time" content="{{meta.published_at}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{meta.title}}" />
+    <meta name="twitter:description" content="{{meta.description}}" />
+    <meta name="twitter:url" content="{{env.URL}}{{page.url}}" />
+    <meta name="twitter:image" content="{{meta.image}}" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="{{meta.author}}" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1333" />
         <script>
             var siteUrl = '{{env.URL}}';
         </script>
-        <script src="https://unpkg.com/vue@next.prod.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script>
             var localTheme = localStorage.getItem('dawn_theme');
             switch (localTheme) {
