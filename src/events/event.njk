@@ -5,12 +5,16 @@ pagination:
     alias: post
 permalink: "/events/{{ post.title | slug }}/"
 layout: dawn/default.njk
+type: post
 eleventyComputed:
   meta:
+    site:
+        url: "https://www.decrescimento.pt"
+        logo: "{{env.URL}}/assets/images/logo_white_theme.png"
     title: "{{ pagination.items[0].title }}"
     description: "{{ pagination.items[0].notes }}"
-    published_at: "{{ pagination.items[0].startDate }}"
-    image: "{% if pagination.items[0].banner[0].url %}{{ pagination.items[0].banner[0].url }}{% endif %}"
+    image:
+        url: "{{pagination.items[0].banner[0].url}}"
 ---
 <header class="single-header kg-canvas">
     <div class="single-meta">

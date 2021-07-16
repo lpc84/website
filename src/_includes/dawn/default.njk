@@ -13,20 +13,23 @@
     
     <meta property="og:site_name" content="Rede para o Descrescimento" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{meta.title}}" />
-    <meta property="og:description" content="{{meta.description}}" />
-    <meta property="og:url" content="{{env.URL}}{{page.url}}" />
-    <meta property="og:image" content="{{meta.image}}" />
-    <meta property="article:published_time" content="{{meta.published_at}}" />
+    {% if meta.title %}<meta property="og:title" content="{{meta.title}}" />{% endif %}
+    {% if meta.description %}<meta property="og:description" content="{{meta.description}}" />{% endif %}
+    {% if page.url %}<meta property="og:url" content="{{env.URL}}{{page.url}}" />{% endif %}
+    {% if meta.image.url %}<meta property="og:image" content="{{meta.image.url}}" />{% endif %}
+    {% if meta.published_at %}<meta property="article:published_time" content="{{meta.published_at}}" />{% endif %}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{meta.title}}" />
-    <meta name="twitter:description" content="{{meta.description}}" />
+    {% if meta.title %}<meta name="twitter:title" content="{{meta.title}}" />{% endif %}
+    {% if meta.description %}<meta name="twitter:description" content="{{meta.description}}" />{% endif %}
     <meta name="twitter:url" content="{{env.URL}}{{page.url}}" />
-    <meta name="twitter:image" content="{{meta.image}}" />
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="{{meta.author}}" />
+    {% if meta.image.url %}<meta name="twitter:image" content="{{meta.image.url}}" />{% endif %}
+    <meta name="twitter:label1" content="Autor" />
+    {% if meta.author %}<meta name="twitter:data1" content="{{meta.author.name}}" />{% endif %}
     <meta property="og:image:width" content="2000" />
     <meta property="og:image:height" content="1333" />
+    {% if type %}
+    {% jsonLdScript meta, type, tags %}
+    {% endif %}
         <script>
             var siteUrl = '{{env.URL}}';
         </script>

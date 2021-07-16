@@ -4,6 +4,20 @@ pagination:
     size: 1
     alias: post
 permalink: "/pages/{{ post.slug | slug }}/"
+type: post
+eleventyComputed:
+  meta:
+    site:
+        url: "https://www.decrescimento.pt"
+        logo: "{{env.URL}}/assets/images/logo_white_theme.png"
+    title: "{{ pagination.items[0].title }}"
+    description: "{{ pagination.items[0].excerpt }}"
+    author:
+      name: "{{pagination.items[0].primary_author.name}}"
+      image:
+        url: "{{pagination.items[0].primary_author.profile_image}}"
+    image:
+        url: "{{pagination.items[0].feature_image}}"
 layout: dawn/default.njk
 ---
 <header class="single-header kg-canvas">
@@ -31,8 +45,10 @@ layout: dawn/default.njk
     {% if post.feature_image %}
     <div class="single-media kg-width-wide u-placeholder">
         {%if post.feature_image%}
-        {% image post.feature_image, post.title %}   
-        {%endif %}
+        <div class="u-placeholder horizontal">
+            {%image post.feature_image, post.title, [357, 600, 972], [] , ["u-object-fit"] %}
+        </div>
+    {%endif %}
     </div>
     {% endif%}
 </header>

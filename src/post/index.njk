@@ -3,13 +3,20 @@ pagination:
     data: ghost_posts
     size: 1
     alias: post
+type: post
 eleventyComputed:
   meta:
+    site:
+        url: "{{page.url}}"
+        logo: "{{env.URL}}/assets/images/logo_white_theme.png"
     title: "{{ pagination.items[0].title }}"
     description: "{{ pagination.items[0].excerpt }}"
-    published_at: "{{ pagination.items[0].published_at }}"
-    image: "{% if pagination.items[0].feature_image %}{{ pagination.items[0].feature_image }}{% endif %}"
-    author: "{{pagination.items[0].primary_author.name}}"
+    author:
+      name: "{{pagination.items[0].primary_author.name}}"
+      image:
+        url: "{{pagination.items[0].primary_author.profile_image}}"
+    image:
+        url: "{{pagination.items[0].feature_image}}"
 permalink: "/posts/{{ post.slug | slug }}/"
 layout: dawn/default.njk
 ---

@@ -1,7 +1,16 @@
 ---
-    title: {{post.title}}
-    layout: dawn/default.njk
-    permalink: /
+layout: dawn/default.njk
+permalink: /
+type: post
+eleventyComputed:
+    meta:
+        site:
+            url: "https://www.decrescimento.pt"
+            logo: "{{env.URL}}/assets/images/logo_white_theme.png"
+        title: "Rede Para o Decrescimento"
+        description: "A Rede para o Decrescimento apela a mudanças individuais, a experiências coletivas, a resistir, a desenvolver projetos políticos e a pensar em futuros diferentes."
+        image:
+            url: "{{env.URL}}/assets/images/logo_white_theme.png"
 ---
 <div class="cover container">
     <div class="cover-content">
