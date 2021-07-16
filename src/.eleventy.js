@@ -1,5 +1,6 @@
 const readingTime = require("eleventy-plugin-reading-time");
 const markdownIt = require("markdown-it");
+const schema = require("@quasibit/eleventy-plugin-schema");
 require('dotenv').config();
 
 const Image = require("@11ty/eleventy-img");
@@ -23,7 +24,7 @@ async function imageShortcode(src, alt, sizes = [357, 600, 972], pictureClass = 
   ${Object.values(metadata).map(imageFormat => {
     return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
   }).join("\n")}
-    <img style="width:100%"
+    <img 
       src="${lowsrc.url}"
       data-src="${lowsrc.url}"
       data-srcset="${Object.values(metadata).map(imageFormat => {
@@ -124,4 +125,13 @@ module.exports = (eleventyConfig) => {
   });
 
   eleventyConfig.addPlugin(readingTime);
+  eleventyConfig.addPlugin(schema);
+  eleventyConfig.addFilter('iso8601', (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toISO()
+  })
+
+  eleventyConfig.addPassthroughCopy({ // object as (src glob): (dest)
+    '_includes/dawn/favicon.ico': '/favicon.ico',
+    '_includes/dawn/assets': '/assets'
+  })
 };
