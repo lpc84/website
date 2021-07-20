@@ -11,7 +11,7 @@ layout: dawn/default.njk
 </div>
 <div class="row">
     {% for post in posts[0] %}
-        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;" class="column" class="single-header kg-canvas">
+        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;margin-top: 3em;" class="column" class="single-header kg-canvas">
             <a href="/events/{{post.title | slug}}" style="width:100%">
                 <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
                     {%if post.banner[0].url %}
@@ -24,6 +24,7 @@ layout: dawn/default.njk
                     <div style="margin-left: 2em">
                         <h4 style="margin-bottom: .3em">{{post | eventDate}} | {{post.local}} | {{post.type}}</h4>
                         <h3>{{post.title}}</h3>
+                        <p>{{post.shortNote}}</p>
                     </div>
                 </a>
             </section>
@@ -40,7 +41,7 @@ layout: dawn/default.njk
 </div>
 <div class="row">
     {% for post in posts[1] %}
-        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;" class="column" class="single-header kg-canvas">
+        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;margin-top: 3em;" class="column" class="single-header kg-canvas">
             <a href="/events/{{post.title | slug}}" style="width:100%">
                 <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
                     {%if post.banner[0].url %}
@@ -53,6 +54,7 @@ layout: dawn/default.njk
                     <div style="margin-left: 2em">
                         <h4 style="margin-bottom: .3em">{{post | eventDate}} | {{post.local}} | {{post.type}}</h4>
                         <h3>{{post.title}}</h3>
+                        <p>{{post.shortNote}}</p>
                     </div>
                 </a>
             </section>
