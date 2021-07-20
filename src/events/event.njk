@@ -41,8 +41,8 @@ eleventyComputed:
 {%if post.location %}
     <p style="margin-bottom: 0"><strong>Localização: </strong>{{post.location}}</p>
 {%endif%}
-{%if post.l %}
-    <p style="margin-bottom: 0"><strong>Localização: </strong>{{post.location}}</p>
+{%if post.eventCapacity %}
+    <p style="margin-bottom: 0"><strong>Lotação: </strong>{{post.eventCapacity}}</p>
 {%endif%}
 {%if post.registrationUrl %}
     <p style="margin-bottom: 0"><strong>Inscrição: </strong><a href="{{post.registrationUrl}}">{{post.registrationUrl}}</a></p>
