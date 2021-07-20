@@ -35,6 +35,21 @@ eleventyComputed:
     </div>
 </header>
 <div class="single-content kg-canvas u-text-format"/>
+{%if post.duration %}
+    <p style="margin-bottom: 0"><strong>Data: </strong>{{post | eventDate}}</p>
+{%endif%}
+{%if post.location %}
+    <p style="margin-bottom: 0"><strong>Localização: </strong>{{post.location}}</p>
+{%endif%}
+{%if post.l %}
+    <p style="margin-bottom: 0"><strong>Localização: </strong>{{post.location}}</p>
+{%endif%}
+{%if post.registrationUrl %}
+    <p style="margin-bottom: 0"><strong>Inscrição: </strong><a href="{{post.registrationUrl}}">{{post.registrationUrl}}</a></p>
+{%endif%}
+{%if post.promoters %}
+    <p style="margin-bottom: .3em"><strong>Promotores: </strong>{{post.promoters}}</p>
+{%endif%}
 {{post.notes | markdown | safe}}
 </div>
 <footer class="single-footer container medium">

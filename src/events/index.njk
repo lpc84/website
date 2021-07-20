@@ -21,10 +21,13 @@ layout: dawn/default.njk
                         {%endif%}
 
                     </div>
-                    <div style="margin-left: 2em">
+                    <div style="margin: 0 1.5em">
                         <h4 style="margin-bottom: .3em">{{post | eventDate}} | {{post.local}} | {{post.type}}</h4>
-                        <h3>{{post.title}}</h3>
-                        <p>{{post.shortNote}}</p>
+                        <h3 style="margin-bottom: .3em">{{post.title}}</h3>
+                        {%if post.promoters %}
+                            <p style="margin-bottom: .3em"><strong>Promotores: </strong>{{post.promoters}}</p>
+                        {%endif%}
+                        <p style="margin-bottom: .3em">{{post.shortNote}}</p>
                     </div>
                 </a>
             </section>
@@ -51,10 +54,13 @@ layout: dawn/default.njk
                         {%endif%}
 
                     </div>
-                    <div style="margin-left: 2em">
+                    <div style="margin: 0 1.5em">
                         <h4 style="margin-bottom: .3em">{{post | eventDate}} | {{post.local}} | {{post.type}}</h4>
-                        <h3>{{post.title}}</h3>
-                        <p>{{post.shortNote}}</p>
+                        <h3 style="margin-bottom: .3em">{{post.title}}</h3>
+                        {%if post.promoters %}
+                            <p style="margin-bottom: .3em"><strong>Promotores: </strong>{{post.promoters}}</p>
+                        {%endif%}
+                        <p style="margin-bottom: .3em">{{post.shortNote}}</p>
                     </div>
                 </a>
             </section>
