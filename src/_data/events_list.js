@@ -1,7 +1,11 @@
 const Airtable = require("airtable");
 
 async function run(){
-  const res = [ await getEvents("Next Events"), await getEvents("Previews Events") ]
+  const res = [ 
+    await getEvents("Next Events"), 
+    await getEvents("Next External Events"), 
+    await getEvents("Previews Events") 
+  ];
   return res;
 }
 

@@ -1,17 +1,17 @@
 ---
 pagination:
     data: events_list
-    size: 2
+    size: 3
     alias: posts
 permalink: "/events/"
 layout: dawn/default.njk
 ---
-<div class="row">
-    <h2>Próximos Eventos</h2>
+<div class="content">
+    <h2>Próximos Eventos da Rede</h2>
 </div>
-<div class="row">
+<div class="content row">
     {% for post in posts[0] %}
-        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;margin-top: 3em;" class="column" class="single-header kg-canvas">
+        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;margin-bottom: 1em;" class="column" class="single-header kg-canvas">
             <a href="/events/{{post.title | slug}}" style="width:100%">
                 <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
                     {%if post.banner[0].url %}
@@ -36,15 +36,47 @@ layout: dawn/default.njk
     </div>
     <div class="single-content kg-canvas u-text-format"/>
         <p></p>
-        <h3>Tem um evento que deseja partilhar com a rede? Preencha <a href="/events/new-event/">este formulário</a> que nós revemos e divulgamos</h3>
+        <h3>Tem um evento que deseja partilhar connosco? Preencha <a href="/events/new-event/">este formulário</a> que nós revemos e divulgamos</h3>
         <p></p>
 </div>
-<div class="row">
+<div class="content">
+    <p></p>
+    <h2>Eventos Externos à Rede</h2>
+    <p>Não são organizados por nós mas merecem ser divulgados</p>
+</div>
+<div class="content row">
+    {% for post in posts[1] %}
+        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;margin-bottom: 1em;" class="column" class="single-header kg-canvas">
+            <a href="/events/{{post.startDate | shortDate | slug}}/{{post.title | slug}}" style="width:100%">
+                <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
+                    {%if post.banner[0].url %}
+                        <div class="u-placeholder horizontal">
+                            {% image post.banner[0].url, post.title, [357, 600, 972], ["event-picture"], ["u-object-fit", "event-photo"] %}
+                        </div>
+                        {%endif%}
+
+                    </div>
+                    <div style="margin: 0 1.5em">
+                        <h4 style="margin-bottom: .3em">{{post | eventDate}} | {{post.local}} | {{post.type}}</h4>
+                        <h3 style="margin-bottom: .3em">{{post.title}}</h3>
+                        {%if post.promoters %}
+                            <p style="margin-bottom: .3em"><strong>Promotores: </strong>{{post.promoters}}</p>
+                        {%endif%}
+                        <p style="margin-bottom: .3em">{{post.shortNote}}</p>
+                    </div>
+                </a>
+            </section>
+
+        {% endfor %}
+    </div>
+<div class="content">
+    <p></p>
+
     <h2>Eventos Passados</h2>
 </div>
-<div class="row">
-    {% for post in posts[1] %}
-        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;margin-top: 3em;" class="column" class="single-header kg-canvas">
+<div class="content row">
+    {% for post in posts[2] %}
+        <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;margin-bottom: 1em;" class="column" class="single-header kg-canvas">
             <a href="/events/{{post.title | slug}}" style="width:100%">
                 <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
                     {%if post.banner[0].url %}
@@ -73,9 +105,13 @@ layout: dawn/default.njk
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        width: 100%;
+        
+    }
+
+    .content{
         max-width: 1130px;
-        margin: 1em auto;
+        margin: 0 auto;
+        width: 100%;
     }
 
     .column {
