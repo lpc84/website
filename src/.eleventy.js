@@ -105,7 +105,7 @@ module.exports = (eleventyConfig) => {
     const month = date.getMonth();
 
     const duration = value.duration;
-    return `${day} ${months[month]} | ${duration}h`;
+    return value.customDuration || `${day} ${months[month]} | ${duration}h`;
   });
 
   eleventyConfig.addNunjucksFilter("getMemberPosts", function (posts, member) {
