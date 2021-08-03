@@ -9,56 +9,155 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap">
-<meta name="referrer" content="no-referrer-when-downgrade" />
-    
-    <meta property="og:site_name" content="Rede para o Descrescimento" />
-    <meta property="og:type" content="article" />
-    {% if meta.title %}<meta property="og:title" content="{{meta.title}}" />{% endif %}
-    {% if meta.description %}<meta property="og:description" content="{{meta.description}}" />{% endif %}
-    {% if page.url %}<meta property="og:url" content="{{env.URL}}{{page.url}}" />{% endif %}
-    {% if meta.image.url %}<meta property="og:image" content="{{meta.image.url}}" />{% endif %}
-    {% if meta.published_at %}<meta property="article:published_time" content="{{meta.published_at}}" />{% endif %}
-    <meta name="twitter:card" content="summary_large_image" />
-    {% if meta.title %}<meta name="twitter:title" content="{{meta.title}}" />{% endif %}
-    {% if meta.description %}<meta name="twitter:description" content="{{meta.description}}" />{% endif %}
-    <meta name="twitter:url" content="{{env.URL}}{{page.url}}" />
-    {% if meta.image.url %}<meta name="twitter:image" content="{{meta.image.url}}" />{% endif %}
-    <meta name="twitter:label1" content="Autor" />
-    {% if meta.author %}<meta name="twitter:data1" content="{{meta.author.name}}" />{% endif %}
-    <meta property="og:image:width" content="2000" />
-    <meta property="og:image:height" content="1333" />
-    {% if type %}
-    {% jsonLdScript meta, type, tags %}
-    {% endif %}
-        <script>
-            var siteUrl = '{{env.URL}}';
-        </script>
-        <script>
-            var localTheme = localStorage.getItem('dawn_theme');
-            switch (localTheme) {
-                case 'dark':
-                    document
-                        .documentElement
-                        .classList
-                        .add('theme-dark');
-                    break;
-                case 'light':
-                    document
-                        .documentElement
-                        .classList
-                        .add('theme-light');
-                    break;
-                default:
-                    break;
-            }
-            /*! lazysizes - v4.1.6 */
-!function(a,b){var c=b(a,a.document);a.lazySizes=c,"object"==typeof module&&module.exports&&(module.exports=c)}(window,function(a,b){"use strict";if(b.getElementsByClassName){var c,d,e=b.documentElement,f=a.Date,g=a.HTMLPictureElement,h="addEventListener",i="getAttribute",j=a[h],k=a.setTimeout,l=a.requestAnimationFrame||k,m=a.requestIdleCallback,n=/^picture$/i,o=["load","error","lazyincluded","_lazyloaded"],p={},q=Array.prototype.forEach,r=function(a,b){return p[b]||(p[b]=new RegExp("(\\s|^)"+b+"(\\s|$)")),p[b].test(a[i]("class")||"")&&p[b]},s=function(a,b){r(a,b)||a.setAttribute("class",(a[i]("class")||"").trim()+" "+b)},t=function(a,b){var c;(c=r(a,b))&&a.setAttribute("class",(a[i]("class")||"").replace(c," "))},u=function(a,b,c){var d=c?h:"removeEventListener";c&&u(a,b),o.forEach(function(c){a[d](c,b)})},v=function(a,d,e,f,g){var h=b.createEvent("Event");return e||(e={}),e.instance=c,h.initEvent(d,!f,!g),h.detail=e,a.dispatchEvent(h),h},w=function(b,c){var e;!g&&(e=a.picturefill||d.pf)?(c&&c.src&&!b[i]("srcset")&&b.setAttribute("srcset",c.src),e({reevaluate:!0,elements:[b]})):c&&c.src&&(b.src=c.src)},x=function(a,b){return(getComputedStyle(a,null)||{})[b]},y=function(a,b,c){for(c=c||a.offsetWidth;c<d.minSize&&b&&!a._lazysizesWidth;)c=b.offsetWidth,b=b.parentNode;return c},z=function(){var a,c,d=[],e=[],f=d,g=function(){var b=f;for(f=d.length?e:d,a=!0,c=!1;b.length;)b.shift()();a=!1},h=function(d,e){a&&!e?d.apply(this,arguments):(f.push(d),c||(c=!0,(b.hidden?k:l)(g)))};return h._lsFlush=g,h}(),A=function(a,b){return b?function(){z(a)}:function(){var b=this,c=arguments;z(function(){a.apply(b,c)})}},B=function(a){var b,c=0,e=d.throttleDelay,g=d.ricTimeout,h=function(){b=!1,c=f.now(),a()},i=m&&g>49?function(){m(h,{timeout:g}),g!==d.ricTimeout&&(g=d.ricTimeout)}:A(function(){k(h)},!0);return function(a){var d;(a=!0===a)&&(g=33),b||(b=!0,d=e-(f.now()-c),d<0&&(d=0),a||d<9?i():k(i,d))}},C=function(a){var b,c,d=99,e=function(){b=null,a()},g=function(){var a=f.now()-c;a<d?k(g,d-a):(m||e)(e)};return function(){c=f.now(),b||(b=k(g,d))}};!function(){var b,c={lazyClass:"lazyload",loadedClass:"lazyloaded",loadingClass:"lazyloading",preloadClass:"lazypreload",errorClass:"lazyerror",autosizesClass:"lazyautosizes",srcAttr:"data-src",srcsetAttr:"data-srcset",sizesAttr:"data-sizes",minSize:40,customMedia:{},init:!0,expFactor:1.5,hFac:.8,loadMode:2,loadHidden:!0,ricTimeout:0,throttleDelay:125};d=a.lazySizesConfig||a.lazysizesConfig||{};for(b in c)b in d||(d[b]=c[b]);a.lazySizesConfig=d,k(function(){d.init&&F()})}();var D=function(){var g,l,m,o,p,y,D,F,G,H,I,J,K=/^img$/i,L=/^iframe$/i,M="onscroll"in a&&!/(gle|ing)bot/.test(navigator.userAgent),N=0,O=0,P=0,Q=-1,R=function(a){P--,a&&a.target&&u(a.target,R),(!a||P<0||!a.target)&&(P=0)},S=function(a){return null==J&&(J="hidden"==x(b.body,"visibility")),J||"hidden"!=x(a.parentNode,"visibility")&&"hidden"!=x(a,"visibility")},T=function(a,c){var d,f=a,g=S(a);for(F-=c,I+=c,G-=c,H+=c;g&&(f=f.offsetParent)&&f!=b.body&&f!=e;)(g=(x(f,"opacity")||1)>0)&&"visible"!=x(f,"overflow")&&(d=f.getBoundingClientRect(),g=H>d.left&&G<d.right&&I>d.top-1&&F<d.bottom+1);return g},U=function(){var a,f,h,j,k,m,n,p,q,r,s,t,u=c.elements;if((o=d.loadMode)&&P<8&&(a=u.length)){for(f=0,Q++,r=!d.expand||d.expand<1?e.clientHeight>500&&e.clientWidth>500?500:370:d.expand,s=r*d.expFactor,t=d.hFac,J=null,O<s&&P<1&&Q>2&&o>2&&!b.hidden?(O=s,Q=0):O=o>1&&Q>1&&P<6?r:N;f<a;f++)if(u[f]&&!u[f]._lazyRace)if(M)if((p=u[f][i]("data-expand"))&&(m=1*p)||(m=O),q!==m&&(y=innerWidth+m*t,D=innerHeight+m,n=-1*m,q=m),h=u[f].getBoundingClientRect(),(I=h.bottom)>=n&&(F=h.top)<=D&&(H=h.right)>=n*t&&(G=h.left)<=y&&(I||H||G||F)&&(d.loadHidden||S(u[f]))&&(l&&P<3&&!p&&(o<3||Q<4)||T(u[f],m))){if(aa(u[f]),k=!0,P>9)break}else!k&&l&&!j&&P<4&&Q<4&&o>2&&(g[0]||d.preloadAfterLoad)&&(g[0]||!p&&(I||H||G||F||"auto"!=u[f][i](d.sizesAttr)))&&(j=g[0]||u[f]);else aa(u[f]);j&&!k&&aa(j)}},V=B(U),W=function(a){s(a.target,d.loadedClass),t(a.target,d.loadingClass),u(a.target,Y),v(a.target,"lazyloaded")},X=A(W),Y=function(a){X({target:a.target})},Z=function(a,b){try{a.contentWindow.location.replace(b)}catch(c){a.src=b}},$=function(a){var b,c=a[i](d.srcsetAttr);(b=d.customMedia[a[i]("data-media")||a[i]("media")])&&a.setAttribute("media",b),c&&a.setAttribute("srcset",c)},_=A(function(a,b,c,e,f){var g,h,j,l,o,p;(o=v(a,"lazybeforeunveil",b)).defaultPrevented||(e&&(c?s(a,d.autosizesClass):a.setAttribute("sizes",e)),h=a[i](d.srcsetAttr),g=a[i](d.srcAttr),f&&(j=a.parentNode,l=j&&n.test(j.nodeName||"")),p=b.firesLoad||"src"in a&&(h||g||l),o={target:a},p&&(u(a,R,!0),clearTimeout(m),m=k(R,2500),s(a,d.loadingClass),u(a,Y,!0)),l&&q.call(j.getElementsByTagName("source"),$),h?a.setAttribute("srcset",h):g&&!l&&(L.test(a.nodeName)?Z(a,g):a.src=g),f&&(h||l)&&w(a,{src:g})),a._lazyRace&&delete a._lazyRace,t(a,d.lazyClass),z(function(){(!p||a.complete&&a.naturalWidth>1)&&(p?R(o):P--,W(o))},!0)}),aa=function(a){var b,c=K.test(a.nodeName),e=c&&(a[i](d.sizesAttr)||a[i]("sizes")),f="auto"==e;(!f&&l||!c||!a[i]("src")&&!a.srcset||a.complete||r(a,d.errorClass)||!r(a,d.lazyClass))&&(b=v(a,"lazyunveilread").detail,f&&E.updateElem(a,!0,a.offsetWidth),a._lazyRace=!0,P++,_(a,b,f,e,c))},ba=function(){if(!l){if(f.now()-p<999)return void k(ba,999);var a=C(function(){d.loadMode=3,V()});l=!0,d.loadMode=3,V(),j("scroll",function(){3==d.loadMode&&(d.loadMode=2),a()},!0)}};return{_:function(){p=f.now(),c.elements=b.getElementsByClassName(d.lazyClass),g=b.getElementsByClassName(d.lazyClass+" "+d.preloadClass),j("scroll",V,!0),j("resize",V,!0),a.MutationObserver?new MutationObserver(V).observe(e,{childList:!0,subtree:!0,attributes:!0}):(e[h]("DOMNodeInserted",V,!0),e[h]("DOMAttrModified",V,!0),setInterval(V,999)),j("hashchange",V,!0),["focus","mouseover","click","load","transitionend","animationend","webkitAnimationEnd"].forEach(function(a){b[h](a,V,!0)}),/d$|^c/.test(b.readyState)?ba():(j("load",ba),b[h]("DOMContentLoaded",V),k(ba,2e4)),c.elements.length?(U(),z._lsFlush()):V()},checkElems:V,unveil:aa}}(),E=function(){var a,c=A(function(a,b,c,d){var e,f,g;if(a._lazysizesWidth=d,d+="px",a.setAttribute("sizes",d),n.test(b.nodeName||""))for(e=b.getElementsByTagName("source"),f=0,g=e.length;f<g;f++)e[f].setAttribute("sizes",d);c.detail.dataAttr||w(a,c.detail)}),e=function(a,b,d){var e,f=a.parentNode;f&&(d=y(a,f,d),e=v(a,"lazybeforesizes",{width:d,dataAttr:!!b}),e.defaultPrevented||(d=e.detail.width)&&d!==a._lazysizesWidth&&c(a,f,e,d))},f=function(){var b,c=a.length;if(c)for(b=0;b<c;b++)e(a[b])},g=C(f);return{_:function(){a=b.getElementsByClassName(d.autosizesClass),j("resize",g)},checkElems:g,updateElem:e}}(),F=function(){F.i||(F.i=!0,E._(),D._())};return c={cfg:d,autoSizer:E,loader:D,init:F,uP:w,aC:s,rC:t,hC:r,fire:v,gW:y,rAF:z}}});
-        </script>
+        <meta name="referrer" content="no-referrer-when-downgrade" />
+        
+        <meta property="og:site_name" content="Rede para o Descrescimento" />
+        <meta property="og:type" content="article" />
+        {% if meta.title %}<meta property="og:title" content="{{meta.title}}" />{% endif %}
+        {% if meta.description %}<meta property="og:description" content="{{meta.description}}" />{% endif %}
+        {% if page.url %}<meta property="og:url" content="{{env.URL}}{{page.url}}" />{% endif %}
+        {% if meta.image.url %}<meta property="og:image" content="{{meta.image.url}}" />{% endif %}
+        {% if meta.published_at %}<meta property="article:published_time" content="{{meta.published_at}}" />{% endif %}
+        <meta name="twitter:card" content="summary_large_image" />
+        {% if meta.title %}<meta name="twitter:title" content="{{meta.title}}" />{% endif %}
+        {% if meta.description %}<meta name="twitter:description" content="{{meta.description}}" />{% endif %}
+        <meta name="twitter:url" content="{{env.URL}}{{page.url}}" />
+        {% if meta.image.url %}<meta name="twitter:image" content="{{meta.image.url}}" />{% endif %}
+        <meta name="twitter:label1" content="Autor" />
+        {% if meta.author %}<meta name="twitter:data1" content="{{meta.author.name}}" />{% endif %}
+        <meta property="og:image:width" content="2000" />
+        <meta property="og:image:height" content="1333" />
+        {% if type %}
+        {% jsonLdScript meta, type, tags %}
+        {% endif %}
+            <script>
+                var siteUrl = '{{env.URL}}';
+            </script>
+            <script>
+                var localTheme = localStorage.getItem('dawn_theme');
+                switch (localTheme) {
+                    case 'dark':
+                        document
+                            .documentElement
+                            .classList
+                            .add('theme-dark');
+                        break;
+                    case 'light':
+                        document
+                            .documentElement
+                            .classList
+                            .add('theme-light');
+                        break;
+                    default:
+                        break;
+                }
+                /*! lazysizes - v4.1.6 */
+    !function(a,b){var c=b(a,a.document);a.lazySizes=c,"object"==typeof module&&module.exports&&(module.exports=c)}(window,function(a,b){"use strict";if(b.getElementsByClassName){var c,d,e=b.documentElement,f=a.Date,g=a.HTMLPictureElement,h="addEventListener",i="getAttribute",j=a[h],k=a.setTimeout,l=a.requestAnimationFrame||k,m=a.requestIdleCallback,n=/^picture$/i,o=["load","error","lazyincluded","_lazyloaded"],p={},q=Array.prototype.forEach,r=function(a,b){return p[b]||(p[b]=new RegExp("(\\s|^)"+b+"(\\s|$)")),p[b].test(a[i]("class")||"")&&p[b]},s=function(a,b){r(a,b)||a.setAttribute("class",(a[i]("class")||"").trim()+" "+b)},t=function(a,b){var c;(c=r(a,b))&&a.setAttribute("class",(a[i]("class")||"").replace(c," "))},u=function(a,b,c){var d=c?h:"removeEventListener";c&&u(a,b),o.forEach(function(c){a[d](c,b)})},v=function(a,d,e,f,g){var h=b.createEvent("Event");return e||(e={}),e.instance=c,h.initEvent(d,!f,!g),h.detail=e,a.dispatchEvent(h),h},w=function(b,c){var e;!g&&(e=a.picturefill||d.pf)?(c&&c.src&&!b[i]("srcset")&&b.setAttribute("srcset",c.src),e({reevaluate:!0,elements:[b]})):c&&c.src&&(b.src=c.src)},x=function(a,b){return(getComputedStyle(a,null)||{})[b]},y=function(a,b,c){for(c=c||a.offsetWidth;c<d.minSize&&b&&!a._lazysizesWidth;)c=b.offsetWidth,b=b.parentNode;return c},z=function(){var a,c,d=[],e=[],f=d,g=function(){var b=f;for(f=d.length?e:d,a=!0,c=!1;b.length;)b.shift()();a=!1},h=function(d,e){a&&!e?d.apply(this,arguments):(f.push(d),c||(c=!0,(b.hidden?k:l)(g)))};return h._lsFlush=g,h}(),A=function(a,b){return b?function(){z(a)}:function(){var b=this,c=arguments;z(function(){a.apply(b,c)})}},B=function(a){var b,c=0,e=d.throttleDelay,g=d.ricTimeout,h=function(){b=!1,c=f.now(),a()},i=m&&g>49?function(){m(h,{timeout:g}),g!==d.ricTimeout&&(g=d.ricTimeout)}:A(function(){k(h)},!0);return function(a){var d;(a=!0===a)&&(g=33),b||(b=!0,d=e-(f.now()-c),d<0&&(d=0),a||d<9?i():k(i,d))}},C=function(a){var b,c,d=99,e=function(){b=null,a()},g=function(){var a=f.now()-c;a<d?k(g,d-a):(m||e)(e)};return function(){c=f.now(),b||(b=k(g,d))}};!function(){var b,c={lazyClass:"lazyload",loadedClass:"lazyloaded",loadingClass:"lazyloading",preloadClass:"lazypreload",errorClass:"lazyerror",autosizesClass:"lazyautosizes",srcAttr:"data-src",srcsetAttr:"data-srcset",sizesAttr:"data-sizes",minSize:40,customMedia:{},init:!0,expFactor:1.5,hFac:.8,loadMode:2,loadHidden:!0,ricTimeout:0,throttleDelay:125};d=a.lazySizesConfig||a.lazysizesConfig||{};for(b in c)b in d||(d[b]=c[b]);a.lazySizesConfig=d,k(function(){d.init&&F()})}();var D=function(){var g,l,m,o,p,y,D,F,G,H,I,J,K=/^img$/i,L=/^iframe$/i,M="onscroll"in a&&!/(gle|ing)bot/.test(navigator.userAgent),N=0,O=0,P=0,Q=-1,R=function(a){P--,a&&a.target&&u(a.target,R),(!a||P<0||!a.target)&&(P=0)},S=function(a){return null==J&&(J="hidden"==x(b.body,"visibility")),J||"hidden"!=x(a.parentNode,"visibility")&&"hidden"!=x(a,"visibility")},T=function(a,c){var d,f=a,g=S(a);for(F-=c,I+=c,G-=c,H+=c;g&&(f=f.offsetParent)&&f!=b.body&&f!=e;)(g=(x(f,"opacity")||1)>0)&&"visible"!=x(f,"overflow")&&(d=f.getBoundingClientRect(),g=H>d.left&&G<d.right&&I>d.top-1&&F<d.bottom+1);return g},U=function(){var a,f,h,j,k,m,n,p,q,r,s,t,u=c.elements;if((o=d.loadMode)&&P<8&&(a=u.length)){for(f=0,Q++,r=!d.expand||d.expand<1?e.clientHeight>500&&e.clientWidth>500?500:370:d.expand,s=r*d.expFactor,t=d.hFac,J=null,O<s&&P<1&&Q>2&&o>2&&!b.hidden?(O=s,Q=0):O=o>1&&Q>1&&P<6?r:N;f<a;f++)if(u[f]&&!u[f]._lazyRace)if(M)if((p=u[f][i]("data-expand"))&&(m=1*p)||(m=O),q!==m&&(y=innerWidth+m*t,D=innerHeight+m,n=-1*m,q=m),h=u[f].getBoundingClientRect(),(I=h.bottom)>=n&&(F=h.top)<=D&&(H=h.right)>=n*t&&(G=h.left)<=y&&(I||H||G||F)&&(d.loadHidden||S(u[f]))&&(l&&P<3&&!p&&(o<3||Q<4)||T(u[f],m))){if(aa(u[f]),k=!0,P>9)break}else!k&&l&&!j&&P<4&&Q<4&&o>2&&(g[0]||d.preloadAfterLoad)&&(g[0]||!p&&(I||H||G||F||"auto"!=u[f][i](d.sizesAttr)))&&(j=g[0]||u[f]);else aa(u[f]);j&&!k&&aa(j)}},V=B(U),W=function(a){s(a.target,d.loadedClass),t(a.target,d.loadingClass),u(a.target,Y),v(a.target,"lazyloaded")},X=A(W),Y=function(a){X({target:a.target})},Z=function(a,b){try{a.contentWindow.location.replace(b)}catch(c){a.src=b}},$=function(a){var b,c=a[i](d.srcsetAttr);(b=d.customMedia[a[i]("data-media")||a[i]("media")])&&a.setAttribute("media",b),c&&a.setAttribute("srcset",c)},_=A(function(a,b,c,e,f){var g,h,j,l,o,p;(o=v(a,"lazybeforeunveil",b)).defaultPrevented||(e&&(c?s(a,d.autosizesClass):a.setAttribute("sizes",e)),h=a[i](d.srcsetAttr),g=a[i](d.srcAttr),f&&(j=a.parentNode,l=j&&n.test(j.nodeName||"")),p=b.firesLoad||"src"in a&&(h||g||l),o={target:a},p&&(u(a,R,!0),clearTimeout(m),m=k(R,2500),s(a,d.loadingClass),u(a,Y,!0)),l&&q.call(j.getElementsByTagName("source"),$),h?a.setAttribute("srcset",h):g&&!l&&(L.test(a.nodeName)?Z(a,g):a.src=g),f&&(h||l)&&w(a,{src:g})),a._lazyRace&&delete a._lazyRace,t(a,d.lazyClass),z(function(){(!p||a.complete&&a.naturalWidth>1)&&(p?R(o):P--,W(o))},!0)}),aa=function(a){var b,c=K.test(a.nodeName),e=c&&(a[i](d.sizesAttr)||a[i]("sizes")),f="auto"==e;(!f&&l||!c||!a[i]("src")&&!a.srcset||a.complete||r(a,d.errorClass)||!r(a,d.lazyClass))&&(b=v(a,"lazyunveilread").detail,f&&E.updateElem(a,!0,a.offsetWidth),a._lazyRace=!0,P++,_(a,b,f,e,c))},ba=function(){if(!l){if(f.now()-p<999)return void k(ba,999);var a=C(function(){d.loadMode=3,V()});l=!0,d.loadMode=3,V(),j("scroll",function(){3==d.loadMode&&(d.loadMode=2),a()},!0)}};return{_:function(){p=f.now(),c.elements=b.getElementsByClassName(d.lazyClass),g=b.getElementsByClassName(d.lazyClass+" "+d.preloadClass),j("scroll",V,!0),j("resize",V,!0),a.MutationObserver?new MutationObserver(V).observe(e,{childList:!0,subtree:!0,attributes:!0}):(e[h]("DOMNodeInserted",V,!0),e[h]("DOMAttrModified",V,!0),setInterval(V,999)),j("hashchange",V,!0),["focus","mouseover","click","load","transitionend","animationend","webkitAnimationEnd"].forEach(function(a){b[h](a,V,!0)}),/d$|^c/.test(b.readyState)?ba():(j("load",ba),b[h]("DOMContentLoaded",V),k(ba,2e4)),c.elements.length?(U(),z._lsFlush()):V()},checkElems:V,unveil:aa}}(),E=function(){var a,c=A(function(a,b,c,d){var e,f,g;if(a._lazysizesWidth=d,d+="px",a.setAttribute("sizes",d),n.test(b.nodeName||""))for(e=b.getElementsByTagName("source"),f=0,g=e.length;f<g;f++)e[f].setAttribute("sizes",d);c.detail.dataAttr||w(a,c.detail)}),e=function(a,b,d){var e,f=a.parentNode;f&&(d=y(a,f,d),e=v(a,"lazybeforesizes",{width:d,dataAttr:!!b}),e.defaultPrevented||(d=e.detail.width)&&d!==a._lazysizesWidth&&c(a,f,e,d))},f=function(){var b,c=a.length;if(c)for(b=0;b<c;b++)e(a[b])},g=C(f);return{_:function(){a=b.getElementsByClassName(d.autosizesClass),j("resize",g)},checkElems:g,updateElem:e}}(),F=function(){F.i||(F.i=!0,E._(),D._())};return c={cfg:d,autoSizer:E,loader:D,init:F,uP:w,aC:s,rC:t,hC:r,fire:v,gW:y,rAF:z}}});
+            </script>
 
-        {{ghost_head}}
+            {{ghost_head}}
     </head>
 
+{%if meta.title%}
+    <body class="post-template">
+{%endif%}
+{%if meta.title != null %}
     <body>
+{%endif%}
+<svg width="0" height="0" style="display: none;">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="arrow-left">
+        <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="arrow-right">
+        <path d="M5.333 14.667v2.667h16L14 24.667l1.893 1.893L26.453 16 15.893 5.44 14 7.333l7.333 7.333h-16z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="brightness-2">
+        <path
+            d="M13.333 2.667c-2.427 0-4.707.667-6.667 1.8 4 2.307 6.667 6.6 6.667 11.533s-2.667 9.227-6.667 11.533c1.96 1.133 4.24 1.8 6.667 1.8 7.36 0 13.333-5.973 13.333-13.333S20.693 2.667 13.333 2.667z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="chevron-left">
+        <path d="M20.547 22.107L14.44 16l6.107-6.12L18.667 8l-8 8 8 8 1.88-1.893z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="chevron-right">
+        <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="circle-half-full">
+        <path
+            d="M16 2.667c-7.36 0-13.333 5.973-13.333 13.333s5.973 13.333 13.333 13.333c7.36 0 13.333-5.973 13.333-13.333s-5.973-13.333-13.333-13.333zM16 5.333c5.893 0 10.667 4.773 10.667 10.667s-4.773 10.667-10.667 10.667v-21.333z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="dots-horizontal">
+        <path
+            d="M21.333 16c0-1.473 1.194-2.667 2.667-2.667v0c1.473 0 2.667 1.194 2.667 2.667v0c0 1.473-1.194 2.667-2.667 2.667v0c-1.473 0-2.667-1.194-2.667-2.667v0zM13.333 16c0-1.473 1.194-2.667 2.667-2.667v0c1.473 0 2.667 1.194 2.667 2.667v0c0 1.473-1.194 2.667-2.667 2.667v0c-1.473 0-2.667-1.194-2.667-2.667v0zM5.333 16c0-1.473 1.194-2.667 2.667-2.667v0c1.473 0 2.667 1.194 2.667 2.667v0c0 1.473-1.194 2.667-2.667 2.667v0c-1.473 0-2.667-1.194-2.667-2.667v0z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="facebook-box">
+        <path
+            d="M6.667 4h18.667c1.467 0 2.667 1.2 2.667 2.667v18.667c0 1.467-1.2 2.667-2.667 2.667H6.667A2.675 2.675 0 0 1 4 25.334V6.667C4 5.2 5.2 4 6.667 4zM24 6.667h-3.333A4.672 4.672 0 0 0 16 11.334v3.333h-2.667v4H16V28h4v-9.333h4v-4h-4V12c0-.733.6-1.333 1.333-1.333H24v-4z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="facebook">
+        <path
+            d="M22.667 2.667V8H20c-.92 0-1.333 1.08-1.333 2v3.333h4v5.333h-4v10.667h-5.333V18.666h-4v-5.333h4V8a5.332 5.332 0 0 1 5.333-5.333h4z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="linkedin">
+        <path
+            d="M25.333 4c1.473 0 2.667 1.194 2.667 2.667v0 18.667c0 1.473-1.194 2.667-2.667 2.667v0h-18.667c-1.473 0-2.667-1.194-2.667-2.667v0-18.667c0-1.473 1.194-2.667 2.667-2.667v0h18.667zM24.667 24.667v-7.067c0-2.401-1.946-4.347-4.347-4.347v0c-1.133 0-2.453 0.693-3.093 1.733v-1.48h-3.72v11.16h3.72v-6.573c0-1.027 0.827-1.867 1.853-1.867 1.031 0 1.867 0.836 1.867 1.867v0 6.573h3.72zM9.173 11.413c1.237 0 2.24-1.003 2.24-2.24v0c0-1.24-1-2.253-2.24-2.253-1.244 0-2.253 1.009-2.253 2.253v0c0 1.24 1.013 2.24 2.253 2.24zM11.027 24.667v-11.16h-3.693v11.16h3.693z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" id="loader">
+        <path opacity="0.3" fill="currentColor"
+            d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946 s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634 c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+        <path fill="currentColor"
+            d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0 C22.32,8.481,24.301,9.057,26.013,10.047z">
+            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20"
+                dur="0.5s" repeatCount="indefinite" />
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="magnify">
+        <path
+            d="M12.667 4a8.667 8.667 0 0 1 8.667 8.667c0 2.147-.787 4.12-2.08 5.64l.36.36h1.053l6.667 6.667-2 2-6.667-6.667v-1.053l-.36-.36a8.689 8.689 0 0 1-5.64 2.08C7.88 21.334 4 17.454 4 12.667S7.88 4 12.667 4zm0 2.667c-3.333 0-6 2.667-6 6s2.667 6 6 6 6-2.667 6-6-2.667-6-6-6z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="menu-down">
+        <path d="M9.333 13.333L16 20l6.667-6.667H9.334z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="rss-box">
+        <path
+            d="M6.667 4h18.667c1.467 0 2.667 1.2 2.667 2.667v18.667c0 1.467-1.2 2.667-2.667 2.667H6.667A2.675 2.675 0 0 1 4 25.334V6.667C4 5.2 5.2 4 6.667 4zM10 20c-1.107 0-2 .893-2 2s.893 2 2 2 2-.893 2-2-.893-2-2-2zm-2-6.667V16c4.413 0 8 3.587 8 8h2.667c0-5.893-4.773-10.667-10.667-10.667zM8 8v2.667c7.36 0 13.333 5.973 13.333 13.333H24c0-8.84-7.16-16-16-16z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="star">
+        <path
+            d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="table-of-contents">
+        <path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="twitter-box">
+        <path
+            d="M6.667 4h18.667c1.467 0 2.667 1.2 2.667 2.667v18.667c0 1.467-1.2 2.667-2.667 2.667H6.667A2.675 2.675 0 0 1 4 25.334V6.667C4 5.2 5.2 4 6.667 4zm16.946 8.44c.64-.533 1.387-1.173 1.72-1.88-.547.28-1.2.453-1.92.547.667-.48 1.213-1.107 1.493-1.96-.693.373-1.4.693-2.28.853-2.067-2.493-7.013-.467-6.133 3.267-3.48-.213-5.6-1.787-7.36-3.72-1 1.627-.133 4.093 1.053 4.773-.613-.04-1.08-.227-1.52-.44.053 2.053 1.187 3.04 2.773 3.573a4.47 4.47 0 0 1-1.52.04c.493 1.427 1.52 2.32 3.28 2.507-1.2 1.013-3.413 1.72-5.2 1.44 1.533.973 3.28 1.747 5.707 1.64 5.88-.267 9.813-4.48 9.907-10.64z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="twitter">
+        <path
+            d="M29.947 8a11.423 11.423 0 0 1-3.28.92 5.738 5.738 0 0 0 2.507-3.173 11.52 11.52 0 0 1-3.627 1.4C24.494 6 23.014 5.334 21.334 5.334c-3.133 0-5.693 2.56-5.693 5.72 0 .453.053.893.147 1.307A16.261 16.261 0 0 1 4.001 6.388a5.663 5.663 0 0 0-.773 2.867c0 1.987 1 3.747 2.547 4.747-.947 0-1.827-.267-2.6-.667v.04a5.724 5.724 0 0 0 4.587 5.613 5.644 5.644 0 0 1-2.574.093c.72 2.253 2.813 3.933 5.333 3.973-1.947 1.547-4.413 2.453-7.107 2.453-.453 0-.907-.027-1.36-.08A16.19 16.19 0 0 0 10.827 28c10.507 0 16.28-8.72 16.28-16.28 0-.253 0-.493-.013-.747A11.42 11.42 0 0 0 29.947 8z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="white-balance-sunny">
+        <path
+            d="M4.733 24.72l1.88 1.88 2.4-2.387L7.12 22.32zm9.934 5.213h2.667V26h-2.667zM16 7.333c-4.413 0-8 3.587-8 8s3.587 8 8 8 8-3.587 8-8c0-4.427-3.587-8-8-8zm10.667 9.334h4V14h-4zm-3.68 7.546l2.4 2.387 1.88-1.88-2.387-2.4zm4.28-18.266l-1.88-1.88-2.4 2.387 1.893 1.893zM17.333.733h-2.667v3.933h2.667zM5.333 14h-4v2.667h4zm3.68-7.547l-2.4-2.387-1.88 1.88 2.387 2.4 1.893-1.893z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="window-close">
+        <path
+            d="M17.947 16l7.387 7.387v1.947h-1.947L16 17.947l-7.387 7.387H6.666v-1.947L14.053 16 6.666 8.613V6.666h1.947L16 14.053l7.387-7.387h1.947v1.947L17.947 16z">
+        </path>
+    </symbol>
+</svg>
 
         <div class="site">
             <header class="site-header container">

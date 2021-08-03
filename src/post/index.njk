@@ -20,6 +20,20 @@ eleventyComputed:
 permalink: "/posts/{{ post.slug | slug }}/"
 layout: dawn/default.njk
 ---
+<header class="sticky">
+    <div class="sticky-title">{{post.title}}</div>
+    <button class="button-icon sticky-toc-button" aria-label="Table of Contents">
+        <svg class="icon">
+            <path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path>
+            <use xlink:href="#table-of-contents">
+            </use>
+        </svg>
+        <div class="sticky-toc"></div>
+    </button>
+    <div class="sticky-track">
+        <div class="sticky-progress"></div>
+    </div>
+</header>
 <header class="single-header kg-canvas">
     <div class="single-meta">
         <span class="single-meta-item single-meta-date">
