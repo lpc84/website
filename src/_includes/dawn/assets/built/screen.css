@@ -32,4 +32,10 @@ article.member-card {
 
 }
 
+.event-photo.event-photo-report{
+    border-radius: 0;
+    width:100%;
+
+}
+
 /*# sourceMappingURL=screen.css.map */

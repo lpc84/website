@@ -31,58 +31,75 @@ eleventyComputed:
             <div class="u-placeholder horizontal">
                 {% image post.banner[0].url, post.title, [357, 600, 972], [], ["u-object-fit", "event-photo"] %}
             </div>
+            {%endif%}
+        </div>
+    </header>
+    <div class="single-content kg-canvas u-text-format"/>
+    {%if post.duration %}
+        <p style="margin-bottom: 0">
+            <strong>Data: </strong>{{post | eventDate}}</p>
         {%endif%}
-    </div>
-</header>
-<div class="single-content kg-canvas u-text-format"/>
-{%if post.duration %}
-    <p style="margin-bottom: 0"><strong>Data: </strong>{{post | eventDate}}</p>
-{%endif%}
-{%if post.location %}
-    <p style="margin-bottom: 0"><strong>Localização: </strong>{{post.location}}</p>
-{%endif%}
-{%if post.eventCapacity %}
-    <p style="margin-bottom: 0"><strong>Lotação: </strong>{{post.eventCapacity}} pessoas</p>
-{%endif%}
-{%if post.registrationUrl %}
-    <p style="margin-bottom: 0"><strong>Inscrição: </strong><a href="{{post.registrationUrl}}">{{post.registrationUrl}}</a></p>
-{%endif%}
-{%if post.promoters %}
-    <p style="margin-bottom: .3em"><strong>Promotores: </strong>{{post.promoters}}</p>
-{%endif%}
+        {%if post.location %}
+            <p style="margin-bottom: 0">
+                <strong>Localização: </strong>{{post.location}}</p>
+            {%endif%}
+            {%if post.eventCapacity %}
+                <p style="margin-bottom: 0">
+                    <strong>Lotação: </strong>{{post.eventCapacity}} pessoas</p>
+                {%endif%}
+                {%if post.registrationUrl %}
+                    <p style="margin-bottom: 0">
+                        <strong>Inscrição: </strong>
+                        <a href="{{post.registrationUrl}}">{{post.registrationUrl}}</a>
+                    </p>
+                    {%endif%}
+                    {%if post.promoters %}
+                        <p style="margin-bottom: .3em">
+                            <strong>Promotores: </strong>{{post.promoters}}</p>
+                        {%endif%}
+                        {{post | log}}
+                        {%if post.Report %}
+{{post.Report | markdown | safe}}
+{% for image in post.Photos %}
+                            {% image image.url, post.title, [357, 600, 972], [], ["event-photo", "event-photo-report"] %}
+        {% endfor %}
+                        
+                        {%else %}
 {{post.notes | markdown | safe}}
-</div>
-<footer class="single-footer container medium">
-<div class="single-footer-left">
-    <div class="navigation navigation-previous">
-        <a class="navigation-link" href="{{env.URL}}/{{pagination.href.previous}}" aria-label="Previous post">
+                            {%endif%}
+
+                        </div>
+                        <footer class="single-footer container medium">
+                            <div class="single-footer-left">
+                                <div class="navigation navigation-previous">
+                                    <a class="navigation-link" href="{{env.URL}}/{{pagination.href.previous}}" aria-label="Previous post">
             &lt;
         </a>
-    </div>
-</div>
-<div class="single-footer-middle">
-    <div class="single-footer-bottom">
-        <div class="share">
-            <a class="share-link share-link-facebook" href="https://www.facebook.com/sharer.php?u=https://decrescimento.pt/o-plano-de-recuperacao-e-resiliencia-da-pseudo-consulta-publica-a-falta-de-coragem-para-imaginar-um-futuro-diferente/" target="_blank" rel="noopener noreferrer">
-                <svg class="icon icon-facebook">
-                    <use xlink:href="#facebook"></use>
-                </svg>
+                                </div>
+                            </div>
+                            <div class="single-footer-middle">
+                                <div class="single-footer-bottom">
+                                    <div class="share">
+                                        <a class="share-link share-link-facebook" href="https://www.facebook.com/sharer.php?u=https://decrescimento.pt/o-plano-de-recuperacao-e-resiliencia-da-pseudo-consulta-publica-a-falta-de-coragem-para-imaginar-um-futuro-diferente/" target="_blank" rel="noopener noreferrer">
+                                            <svg class="icon icon-facebook">
+                                                <use xlink:href="#facebook"></use>
+                                            </svg>
                             Partilhar
                         </a>
-            <a class="share-link share-link-twitter" href="https://twitter.com/intent/tweet?url=https://decrescimento.pt/o-plano-de-recuperacao-e-resiliencia-da-pseudo-consulta-publica-a-falta-de-coragem-para-imaginar-um-futuro-diferente/&amp;text=O%20Plano%20de%20Recupera%C3%A7%C3%A3o%20e%20Resili%C3%AAncia" target="_blank" rel="noopener noreferrer">
-                <svg class="icon icon-twitter">
-                    <use xlink:href="#twitter"></use>
-                </svg>
+                                        <a class="share-link share-link-twitter" href="https://twitter.com/intent/tweet?url=https://decrescimento.pt/o-plano-de-recuperacao-e-resiliencia-da-pseudo-consulta-publica-a-falta-de-coragem-para-imaginar-um-futuro-diferente/&amp;text=O%20Plano%20de%20Recupera%C3%A7%C3%A3o%20e%20Resili%C3%AAncia" target="_blank" rel="noopener noreferrer">
+                                            <svg class="icon icon-twitter">
+                                                <use xlink:href="#twitter"></use>
+                                            </svg>
                             Tweet
                         </a>
-        </div>
-    </div>
-</div>
-<div class="single-footer-right">
-    <div class="navigation navigation-next">
-        <a class="navigation-link" href="{{env.URL}}/{{pagination.href.next}}" aria-label="Next post">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-footer-right">
+                                <div class="navigation navigation-next">
+                                    <a class="navigation-link" href="{{env.URL}}/{{pagination.href.next}}" aria-label="Next post">
             &gt;
         </a>
-    </div>
-</div>
-</footer>
+                                </div>
+                            </div>
+                        </footer>

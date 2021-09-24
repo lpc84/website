@@ -9,6 +9,7 @@ const api = new GhostContentAPI({
 // fetch 5 posts, including related tags and authors
 const featuredPosts = api.posts.browse({
   include: "tags,authors",
+  limit: 100, 
 });
 
 module.exports = featuredPosts;
