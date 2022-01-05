@@ -3,7 +3,7 @@ pagination:
     data: events
     size: 1
     alias: post
-permalink: "/events/{{ post.title | slug }}/"
+permalink: "/events/{{ post.url | slug }}/"
 layout: dawn/default.njk
 type: post
 eleventyComputed:
@@ -57,7 +57,6 @@ eleventyComputed:
                         <p style="margin-bottom: .3em">
                             <strong>Promotores: </strong>{{post.promoters}}</p>
                         {%endif%}
-                        {{post | log}}
                         {%if post.Report %}
 {{post.Report | markdown | safe}}
 {% for image in post.Photos %}
