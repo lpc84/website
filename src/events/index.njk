@@ -47,7 +47,7 @@ layout: dawn/default.njk
 <div class="content row">
     {% for post in posts[1] %}
         <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;margin-bottom: 1em;" class="column" class="single-header kg-canvas">
-            <a href="/events/{{post.title | slug}}" style="width:100%">
+            <a href="/events/{{post.url | slug}}" style="width:100%">
                 <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
                     {%if post.banner[0].url %}
                         <div class="u-placeholder horizontal">
@@ -77,7 +77,7 @@ layout: dawn/default.njk
 <div class="content row">
     {% for post in posts[2] %}
         <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;margin-bottom: 1em;" class="column" class="single-header kg-canvas">
-            <a href="/events/{{post.title | slug}}" style="width:100%">
+            <a href="/events/{{post.url | slug}}" style="width:100%">
                 <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
                     {%if post.banner[0].url %}
                         <div class="u-placeholder horizontal">
