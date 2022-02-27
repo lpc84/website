@@ -21,6 +21,8 @@
     "http-proxy-middleware": "^1.2.0"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@quasibit/eleventy-plugin-schema": "^1.0.0",
     "eleventy": "^1.0.6",
     "markdown-it": "^12.0.6",

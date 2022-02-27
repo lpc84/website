@@ -1,0 +1,32 @@
+---json
+{
+  "permalink": "feed.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Rede para o Decrescimento",
+    "subtitle": "Num planeta de recursos limitados torna-se imperativo reduzir os níveis de produção e consumo. A Rede para o Decrescimento apela a mudanças individuais, a experiências coletivas, a resistir, a desenvolver projetos políticos e a pensar em futuros diferentes",
+    "url": "https://www.decrescimento.pt",
+    "feedUrl": "https://www.decrescimento.pt/feed.xml"
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.subtitle }}</subtitle>
+  <link href="{{ metadata.feedUrl }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+  <updated>{{ ghost_posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+
+  <id>{{ metadata.url }}</id>
+  {%- for post in ghost_posts %}
+  {% set absolutePostUrl %}https://www.decrescimento.pt/posts/{{ post.slug }}{% endset %}
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.published_at  }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.html | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

@@ -6,10 +6,13 @@ const api = new GhostContentAPI({
   version: "v3",
 });
 
+async function run(){
 // fetch 5 posts, including related tags and authors
-const featuredPosts = api.posts.browse({
+const featuredPosts = (await api.posts.browse({
   include: "tags,authors",
   limit: 100, 
-});
+})).map(post => ({...post, date: new Date(post.updated_at)}));
+return featuredPosts;
+}
 
-module.exports = featuredPosts;
+module.exports = run;
