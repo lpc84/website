@@ -1,6 +1,7 @@
 const readingTime = require("eleventy-plugin-reading-time");
 const markdownIt = require("markdown-it");
 const schema = require("@quasibit/eleventy-plugin-schema");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 require('dotenv').config();
 
 const Image = require("@11ty/eleventy-img");
@@ -65,10 +66,11 @@ module.exports = (eleventyConfig) => {
     }
   }
 };
+  eleventyConfig.addPlugin(pluginRss);
   const md = new markdownIt({
     html: true
   }).use(require('@gerhobbelt/markdown-it-responsive'), responsiveImageOption); ;
-  eleventyConfig.addWatchTarget("./_includes/dawn/assets/built/main.min.js");
+  eleventyConfig.addWatchTarget("./src/_includes/dawn/assets/built/main.min.js");
 
   // Nunjucks Filter
   eleventyConfig.addNunjucksFilter("shortDate", function (value) {
@@ -131,7 +133,7 @@ module.exports = (eleventyConfig) => {
   })
 
   eleventyConfig.addPassthroughCopy({ // object as (src glob): (dest)
-    '_includes/dawn/favicon.ico': '/favicon.ico',
-    '_includes/dawn/assets': '/assets'
+    'src/_includes/dawn/favicon.ico': '/favicon.ico',
+    'src/_includes/dawn/assets': '/assets'
   })
 };
