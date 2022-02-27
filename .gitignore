@@ -2,6 +2,10 @@ src/_site/
 node_modules/
 src/.env
 src/.cache
+_site/
+node_modules/
+.env
+.cache
 
 # Local Netlify folder
 .netlify
