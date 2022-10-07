@@ -1,4 +1,5 @@
 const Airtable = require("airtable");
+require("dotenv").config();
 
 async function run() {
   const res = getEvents("Active Events");

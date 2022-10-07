@@ -6,11 +6,54 @@ const api = new GhostContentAPI({
   version: "v3",
 });
 
-// fetch 5 posts, including related tags and authors
-const featuredPosts = api.posts.browse({
-  limit: 5,
-  filter: "featured:true",
-  include: "tags,authors",
-});
+const Airtable = require("airtable");
 
-module.exports = featuredPosts;
+async function run() {
+  const events = await getEvents("Next Events");
+
+  const featuredPosts = await api.posts.browse({
+    limit: 5,
+    filter: "featured:true",
+    include: "tags,authors",
+  });
+
+  const res = events
+    .map((x) => {
+      return {
+        feature_image: x.banner[0].url,
+        title: x.title,
+        url: `/events/${x.url}`,
+      };
+    })
+    .concat(
+      featuredPosts.map((post) => {
+        return {
+          feature_image: post.feature_image,
+          title: post.title,
+          url: `/posts/${post.slug}`,
+        };
+      })
+    );
+  console.log(res);
+  return res;
+}
+
+async function getEvents(eventView) {
+  const airtable = new Airtable({ apiKey: process.env.AIRTABLE_KEY });
+  const base = airtable.base("appcCARRkc6aEqFgb");
+  return (
+    await base("Eventos")
+      .select({
+        // Selecting the first 3 records in Grid view:
+        maxRecords: 100,
+        view: eventView,
+      })
+      .all()
+  ).map((x) => {
+    let fields = x.fields;
+    fields.url = fields.url || fields.title;
+    return fields;
+  });
+}
+
+module.exports = run();

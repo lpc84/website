@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd src && npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy --input=src --output=_site",
+    "serve": "npx @11ty/eleventy --input=src --output=_site --serve"
   },
   "author": "",
   "license": "ISC",
