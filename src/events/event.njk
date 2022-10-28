@@ -59,12 +59,12 @@ eleventyComputed:
                         {%endif%}
                         {%if post.Report %}
 {{post.Report | markdown | safe}}
-{% for image in post.Photos %}
-                            {% image image.url, post.title, [357, 600, 972], [], ["event-photo", "event-photo-report"] %}
-        {% endfor %}
+
                         
                         {%else %}
+                        {%if post.notes %}
 {{post.notes | markdown | safe}}
+                            {%endif%}
                             {%endif%}
 
                         </div>
