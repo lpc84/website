@@ -10,7 +10,7 @@ eleventyComputed:
         url: "{{page.url}}"
         logo: "{{env.URL}}/assets/images/logo_white_theme.png"
     title: "{{ pagination.items[0].title }}"
-    description: "{{ pagination.items[0].excerpt }}"
+    description: "{{ pagination.items[0].custom_excerpt }}"
     author:
       name: "{{pagination.items[0].primary_author.name}}"
       image:
@@ -52,7 +52,7 @@ layout: dawn/default.njk
     </div>
     <h1 class="single-title">{{post.title}}</h1>
     <div class="single-excerpt">
-        {{post.excerpt}}
+        {{post.custom_excerpt }}
     </div>
     {%if post.feature_image%}
         <div class="u-placeholder horizontal">
