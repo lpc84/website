@@ -35,7 +35,7 @@ layout: dawn/default.njk
     </div>
 </header>
 <header class="single-header kg-canvas">
-    <div class="single-meta">
+    <div class="single-meta"  style="margin-top:5em">
         <span class="single-meta-item single-meta-date">
             <time datetime="2021-03-03">
                 {{post.published_at | shortDate}}
@@ -51,11 +51,11 @@ layout: dawn/default.njk
         </span>
     </div>
     <h1 class="single-title">{{post.title}}</h1>
-    <div class="single-excerpt">
-        {{post.custom_excerpt }}
+    <div class="single-excerpt" style="margin-bottom:2.5em">
+        {{ post.custom_excerpt }}
     </div>
     {%if post.feature_image%}
-        <div class="u-placeholder horizontal">
+        <div class="u-placeholder kg-width-wide horizontal">
             {%image post.feature_image, post.title, [357, 600, 972], [] , ["u-object-fit"] %}
         </div>
     {%endif %}
