@@ -7,8 +7,44 @@ permalink: /membros/
 <div class="site-content">
     <main id="site-main" class="site-main outer" role="main">
         <div class="inner">
+            <h2 style="margin:auto;max-width:767px;text-align:center">Membros da Rede</h2>
             <div class="member-feed site-content">
-                {% for member in members %}
+                {% for member in members | filterExternalMember(false) %}
+                    <article class="member-card ">
+                        <a href="/author/{{member.slug}}/" title="{{member.name}}"></a>
+                        <div class="author">
+                            <a href="/membros/{{member.slug}}"
+                            title="{{member.name}}">
+                                <div style="border-radius:50%" class="author-image-placeholder u-placeholder square">
+                                    {%if member.profile_image[0].url%}
+                                        {% image member.profile_image[0].url, member.name, [70], ["author-image"], ["u-object-fit"] %}
+                                        {%endif%}
+                                    </div>
+                                </a>
+                                <h1 class="author-name">
+                                    <a href="/membros/{{member.slug}}/" title="{member.name}"></a>
+                                    <a
+                                href="/membros/{{member.slug}}/" target="_blank"
+                                rel="noopener noreferrer">{{member.name}}</a>
+                                </h1>
+                                <span class="author-meta">{{member.location}}</span>
+                                <div class="author-bio">{{member.bio}}
+                                </div>
+                                <div class="share author-social" style="margin-top:0;"></div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                    <div class="single-content kg-canvas u-text-format"/>
+                </div>
+
+            </div>
+            </div>
+            <h2 style="margin:auto;max-width:767px;text-align:center">Autores que colaboraram no site</h2>
+
+            <div class="member-feed site-content">
+
+            <div class="member-feed site-content">
+                {% for member in members | filterExternalMember(true) %}
                     <article class="member-card ">
                         <a href="/author/{{member.slug}}/" title="{{member.name}}"></a>
                         <div class="author">
