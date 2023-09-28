@@ -34,7 +34,6 @@ async function run() {
         };
       })
     );
-  console.log(res);
   return res;
 }
 

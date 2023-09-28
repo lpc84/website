@@ -1,0 +1,70 @@
+---
+pagination:
+    data: ghost_tags
+    size: 100
+    alias: tags
+permalink: "/tags/"
+layout: dawn/default.njk
+---
+<div class="content" style="margin:1.5em auto">
+    <h2>Categorias</h2>
+</div>
+<div class="content row">
+    {% for tag in tags %}
+    <section style="border: .5px solid var(--darker-gray-color);border-radius: 1em;margin-bottom: 1em;" class="column" class="single-header kg-canvas">
+            <a href="/tags/{{tag.slug}}" style="width:100%">
+                <div style="margin-bottom:1em;margin-top:0;" class="single-media kg-width-wide u-placeholder">
+                    {%if tag.feature_image %}
+                        <div class="u-placeholder horizontal">
+                            {% image tag.feature_image, tag.name, [357, 600, 972], ["event-picture"], ["u-object-fit", "event-photo"] %}
+                        </div>
+                    {%endif%}
+                    </div>
+                    <div style="margin: 1em 1.5em">
+                        <h3 style="margin-bottom: .3em">{{tag.name}}</h3>
+                        <p><bold>{{tag.count.posts}}</bold> Artigos</p>
+                        <p style="margin: auto 1em">{{tag.description}}</p>
+                    </div>
+                </a>
+            </section>
+
+               
+        {% endfor %}
+
+    </div>
+
+<style>
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+    }
+
+    .content{
+        max-width: 1130px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 48%;
+        width: 50%;
+    }
+
+    .event-picture {
+        width:100%;
+    }
+    
+    @media (max-width: 536px) {
+        .column {
+            align-items: center;
+            flex-basis: 95%;
+            margin: 1em;
+            width: 100%;
+        }
+    }
+</style>

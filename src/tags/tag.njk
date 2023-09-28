@@ -1,0 +1,44 @@
+---
+pagination:
+    data: ghost_tags
+    size: 1
+    alias: tag
+type: tag
+permalink: "/tags/{{ tag.slug }}/"
+layout: dawn/default.njk
+---
+<header class="single-header kg-canvas">
+    <h1 class="single-title" style="margin-bottom:2.5em">{{tag.name}}</h1>
+     {%if tag.description%}
+        <div class="single-excerpt" style="margin-bottom:2.5em">
+            {{ tag.description }}
+        </div>
+    {%endif %}
+    {%if tag.feature_image%}
+        <div class="u-placeholder kg-width-wide horizontal">
+            {%image tag.feature_image, tag.name, [357, 600, 972], [] , ["u-object-fit"] %}
+        </div>
+    {%endif %}
+</header>
+<div class="post-feed container medium">
+    {%for post in ghost_posts | filterByTag(tag) %}
+        <article class="feed {{post_class}}">
+            <span class="feed-calendar">
+                <span class="feed-calendar-day">
+                    {{post.published_at | shortDate}}
+                </span>
+            </span>
+            <a href="/posts/{{post.slug}}" class="feed-title">{{ post.title }}</a>
+            <span class="feed-right">
+                <span class="feed-length">
+                    {{post.html | readingTime}}
+                </span>
+            </span>
+            &nbsp;&gt;
+            <a class="u-permalink" href="/posts/{{post.slug}}" aria-label="{{post.title}}"></a>
+        </article>
+    {% else %}
+        <li>This would display if the 'item' collection were empty</li>
+    {% endfor %}
+</div>
+</footer>

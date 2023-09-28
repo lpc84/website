@@ -10,8 +10,9 @@ async function run(){
       view: "Grid view",
       filterByFormula: "{active} = 1"
     })
-    .all()).map(x => x.fields);
+    .all()).map(x => ({...x.fields, external: x.fields.external || false}));
   return res;
 }
 
 module.exports = run();
+

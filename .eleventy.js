@@ -81,6 +81,17 @@ module.exports = (eleventyConfig) => {
     return `${day > 9 ? "" : "0"}${day}-${day > 9 ? "" : "0"}${month}-${year}`;
   });
 
+   // Nunjucks Filter
+   eleventyConfig.addNunjucksFilter("filterByTag", function (posts, tag) {
+    return posts.filter(p => p.tags.find(t => t.slug === tag.slug));
+  });
+
+  eleventyConfig.addNunjucksFilter("filterExternalMember", function (members, isExternalMember) {
+    return members.filter(m => {
+      return m.external || false == isExternalMember
+    });
+  });
+
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
