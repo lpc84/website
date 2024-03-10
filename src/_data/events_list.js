@@ -4,7 +4,7 @@ async function run() {
   const res = [
     await getEvents("Next Events"),
     await getEvents("Next External Events"),
-    await getEvents("Previews Events"),
+    await getEvents("Previous Events"),
   ];
   return res;
 }
