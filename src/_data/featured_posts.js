@@ -20,7 +20,7 @@ async function run() {
   const res = events
     .map((x) => {
       return {
-        feature_image: x.banner[0].url,
+        feature_image: x.banner ? x.banner[0].url : "",
         title: x.title,
         url: `/events/${x.url}`,
       };
